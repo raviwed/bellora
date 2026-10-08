@@ -8,7 +8,7 @@ import {
 } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context"
 
-const defaultBackgroundImage = require("../assets/belloraBackground.png");
+const defaultBackgroundImage = require("../assets/png/belloraBackground.png");
 
 type SafeAreaComponentProps = {
   children: ReactNode;

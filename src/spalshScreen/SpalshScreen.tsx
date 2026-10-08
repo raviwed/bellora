@@ -14,7 +14,7 @@ const SpalshScreen = ({ navigation }: SplashScreenProps) => {
     }, [navigation]);
 
     return(
-        <SafeAreaComponent imageSource={require('../../assets/SpalshScreen.png')} >
+        <SafeAreaComponent imageSource={require('../../assets/png/SpalshScreen.png')} >
             <Dummy />
         </SafeAreaComponent>
     )
