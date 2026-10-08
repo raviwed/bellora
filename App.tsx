@@ -1,7 +1,10 @@
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import SpalshScreen from './src/spalshScreen/SpalshScreen';
-const Stack = createNativeStackNavigator();
+import HomeScreen from './src/HomeScreen/HomeScreen';
+import type { RootStackParamList } from './src/navigation/types';
+
+const Stack = createNativeStackNavigator<RootStackParamList>();
 
 function App() {
   return (
@@ -11,6 +14,7 @@ function App() {
         headerShown: false,
       }}>
      <Stack.Screen name="splashScreen"  component={SpalshScreen} />
+     <Stack.Screen name="Home" component={HomeScreen} />
      </Stack.Navigator>
     </NavigationContainer>
   );
