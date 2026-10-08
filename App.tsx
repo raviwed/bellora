@@ -1,23 +1,19 @@
-import { StatusBar, StyleSheet, Text, useColorScheme, View } from 'react-native';
-import {
-  SafeAreaProvider,
-  useSafeAreaInsets,
-} from 'react-native-safe-area-context';
+import { NavigationContainer } from '@react-navigation/native';
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
+import SpalshScreen from './src/spalshScreen/SpalshScreen';
+const Stack = createNativeStackNavigator();
 
 function App() {
-  const isDarkMode = useColorScheme() === 'dark';
-
   return (
-    <SafeAreaProvider>
-      <Text>Raviteja</Text>
-    </SafeAreaProvider>
+    <NavigationContainer>
+      <Stack.Navigator initialRouteName="splashScreen"
+      screenOptions={{
+        headerShown: false,
+      }}>
+     <Stack.Screen name="splashScreen"  component={SpalshScreen} />
+     </Stack.Navigator>
+    </NavigationContainer>
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-  },
-});
 
 export default App;
