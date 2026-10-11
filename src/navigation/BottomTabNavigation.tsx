@@ -9,11 +9,13 @@ import WishListScreen from '../wishListScreen/WishListScreen';
 import OrderScreen from '../orderScreen/OrderScreen';
 import ProfileScreen from '../profileScreen/ProfileScreen';
 
-import HomeIcon from '../../assets/svg/HomeIcon';
-import OrdersIcon from '../../assets/svg/OrdersIcon';
-import ProfileIcon from '../../assets/svg/ProfileIcon';
-import ShopyIcon from '../../assets/svg/ShopyIcon';
-import WishListIcon from '../../assets/svg/WhishListIcon';
+import HomeIcon from '../../assets/svg/BottomTabNav/HomeIcon';
+import OrdersIcon from '../../assets/svg/BottomTabNav/OrdersIcon';
+import ProfileIcon from '../../assets/svg/BottomTabNav/ProfileIcon';
+import ShopyIcon from '../../assets/svg/BottomTabNav/ShopyIcon';
+import WishListIcon from '../../assets/svg/BottomTabNav/WhishListIcon';
+import { SafeAreaView } from "react-native-safe-area-context"
+import SafeAreaComponent from '../../Components/SafeAreaComponent';
 
 
 const Tab = createBottomTabNavigator<BottomTabParamList>();
@@ -66,6 +68,7 @@ const TabIcon = ({
 
 const BottomTabNavigation = () => {
   return (
+    <SafeAreaComponent>
     <Tab.Navigator
       initialRouteName="Home"
       screenOptions={({route}) => ({
@@ -105,6 +108,7 @@ const BottomTabNavigation = () => {
       <Tab.Screen name="Orders" component={OrderScreen} />
       <Tab.Screen name="Profile" component={ProfileScreen} />
     </Tab.Navigator>
+  </SafeAreaComponent>
   );
 };
 

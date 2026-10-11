@@ -1,9 +1,16 @@
-import { Image, Text, TextInput, TouchableOpacity, View } from "react-native"
+import { Image, ImageSourcePropType, Text, TextInput, TouchableOpacity, View } from "react-native"
 import SafeAreaComponent from "../../Components/SafeAreaComponent"
 import Cart from '../../assets/svg/Cart.svg';
 import Notification from "../../assets/svg/Notification.svg"
 import Search from "../../assets/svg/Search.svg"
 import { styles } from "./styles";
+import Carousel from "../../Components/Coursel";
+
+export type CarouselImage = {
+  id: string;
+  source: ImageSourcePropType;
+};
+const CourselImages: CarouselImage[]=[ { id: 'jaggery1', source: require('../../assets/png/jaggery1.png'), }, { id: 'jaggery2', source: require('../../assets/png/jaggery2.png'), }, { id: 'jaggery3', source: require('../../assets/png/jaggery3.png'), }, { id: 'jaggery4', source: require('../../assets/png/jaggery4.png'), }, { id: 'jaggery5', source: require('../../assets/png/jaggery5.png'), }, ]
 const HomeScreen = () => {
     return (
         <SafeAreaComponent>
@@ -25,11 +32,12 @@ const HomeScreen = () => {
             </View>
             <View style={styles.searchbox} >
                 <Search height={25} width={25} />
-                <TextInput 
-                placeholder="search cookies flavours..." 
-                style={{ width: "90%",}} 
+                <TextInput
+                    placeholder="search cookies flavours..."
+                    style={{ width: "90%", }}
                 />
             </View>
+            <Carousel images={CourselImages} />
 
         </SafeAreaComponent>
     )
