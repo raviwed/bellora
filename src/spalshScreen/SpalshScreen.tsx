@@ -9,7 +9,7 @@ const Dummy = () => null;
 
 const SpalshScreen = ({ navigation }: SplashScreenProps) => {
     useEffect(() => {
-        const timer = setTimeout(() => navigation.replace("Home"), 1000);
+        const timer = setTimeout(() => navigation.replace("startonBoarding"), 1000);
         return () => clearTimeout(timer);
     }, [navigation]);
 

@@ -1,0 +1,17 @@
+{
+  "migIndex": 1,
+  "data": [
+    {
+      "path": "assets/fonts/BelloraDescription-Regular.ttf",
+      "sha1": "f59f9e4f3cbee981a5e6f58a279f9b9613f22599"
+    },
+    {
+      "path": "assets/fonts/BelloraHeading-Bold.ttf",
+      "sha1": "793d5fb19297e5a0c0c6cc69e47ae964e0aecf55"
+    },
+    {
+      "path": "assets/fonts/BelloraLogo-Regular.ttf",
+      "sha1": "0900ed6ae4d46c39afc0c936fed517559d76d664"
+    }
+  ]
+}
