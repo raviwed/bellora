@@ -68,7 +68,6 @@ const TabIcon = ({
 
 const BottomTabNavigation = () => {
   return (
-    <SafeAreaComponent>
     <Tab.Navigator
       initialRouteName="Home"
       screenOptions={({route}) => ({
@@ -92,7 +91,7 @@ const BottomTabNavigation = () => {
         },
 
         tabBarStyle: {
-          height: 64,
+          height:"9.25%",
           paddingTop: 7,
           paddingBottom: 6,
           backgroundColor: BelloraColors.background,
@@ -108,7 +107,6 @@ const BottomTabNavigation = () => {
       <Tab.Screen name="Orders" component={OrderScreen} />
       <Tab.Screen name="Profile" component={ProfileScreen} />
     </Tab.Navigator>
-  </SafeAreaComponent>
   );
 };
 
