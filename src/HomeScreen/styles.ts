@@ -38,6 +38,9 @@ export const styles =StyleSheet.create({
     alignSelf:"center",
     borderColor:"rgb(230, 211, 188)",
     borderRadius:30
+   },
+   containerBox:{
+    marginTop:20,
+    alignSelf:"center",
    }
-
 })

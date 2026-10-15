@@ -5,6 +5,7 @@ import Notification from "../../assets/svg/Notification.svg"
 import Search from "../../assets/svg/Search.svg"
 import { styles } from "./styles";
 import Carousel from "../../Components/Coursel";
+import { BelloraColors } from "../../assets/constants/enums";
 
 export type CarouselImage = {
   id: string;
@@ -34,11 +35,12 @@ const HomeScreen = () => {
                 <Search height={25} width={25} />
                 <TextInput
                     placeholder="search cookies flavours..."
-                    style={{ width: "90%", }}
+                    style={{ width: "90%",}}
+                    placeholderTextColor={BelloraColors.placeholderColor}
                 />
             </View>
-            <Carousel images={CourselImages} />
-
+            <Carousel images={CourselImages} containerStyle={styles.containerBox}  />
+            
         </SafeAreaComponent>
     )
 }

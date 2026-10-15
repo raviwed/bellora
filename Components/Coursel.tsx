@@ -9,10 +9,11 @@ import {
   NativeSyntheticEvent,
   ImageSourcePropType,
   ViewStyle,
+  ImageStyle,
   StyleProp,
 } from 'react-native';
 
-const SCREEN_WIDTH = Dimensions.get('window').width;
+const SCREEN_WIDTH = Dimensions.get('window').width * 0.9;
 
 export type CarouselImage = {
   id: string;
@@ -27,8 +28,15 @@ type CarouselProps = {
   autoPlayInterval?: number;
   showDots?: boolean;
   borderRadius?: number;
-  containerStyle?: StyleProp<ViewStyle>;
   imageResizeMode?: 'cover' | 'contain' | 'stretch' | 'center';
+
+  // Customizable styles
+  containerStyle?: StyleProp<ViewStyle>;
+  slideStyle?: StyleProp<ViewStyle>;
+  imageStyle?: StyleProp<ImageStyle>;
+  paginationStyle?: StyleProp<ViewStyle>;
+  dotStyle?: StyleProp<ViewStyle>;
+  activeDotStyle?: StyleProp<ViewStyle>;
 };
 
 const Carousel: React.FC<CarouselProps> = ({
@@ -39,8 +47,13 @@ const Carousel: React.FC<CarouselProps> = ({
   autoPlayInterval = 3000,
   showDots = true,
   borderRadius = 12,
+  imageResizeMode = 'stretch',
   containerStyle,
-  imageResizeMode = 'cover',
+  slideStyle,
+  imageStyle,
+  paginationStyle,
+  dotStyle,
+  activeDotStyle,
 }) => {
   const [activeIndex, setActiveIndex] = useState(0);
   const flatListRef = useRef<FlatList<CarouselImage>>(null);
@@ -82,10 +95,19 @@ const Carousel: React.FC<CarouselProps> = ({
   };
 
   const renderItem = ({item}: {item: CarouselImage}) => (
-    <View style={[styles.slide, {width, height, borderRadius}]}>
+    <View
+      style={[
+        styles.slide,
+        {width, height, borderRadius},
+        slideStyle,
+      ]}>
       <Image
         source={item.source}
-        style={[styles.image, {borderRadius}]}
+        style={[
+          styles.image,
+          {borderRadius},
+          imageStyle,
+        ]}
         resizeMode={imageResizeMode}
       />
     </View>
@@ -111,17 +133,20 @@ const Carousel: React.FC<CarouselProps> = ({
           offset: width * index,
           index,
         })}
-        extraData={activeIndex}
       />
 
       {showDots && images.length > 1 && (
-        <View style={styles.pagination}>
+        <View style={[styles.pagination, paginationStyle]}>
           {images.map((image, index) => (
             <View
               key={image.id}
               style={[
                 styles.dot,
-                index === activeIndex && styles.activeDot,
+                dotStyle,
+                index === activeIndex && [
+                  styles.activeDot,
+                  activeDotStyle,
+                ],
               ]}
             />
           ))}
@@ -137,7 +162,7 @@ const styles = StyleSheet.create({
   },
   image: {
     width: '100%',
-    height: '100%',
+    height: '90%',
   },
   pagination: {
     flexDirection: 'row',
@@ -159,3 +184,4 @@ const styles = StyleSheet.create({
 });
 
 export default Carousel;
+

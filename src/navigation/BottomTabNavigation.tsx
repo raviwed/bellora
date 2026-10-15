@@ -14,18 +14,14 @@ import OrdersIcon from '../../assets/svg/BottomTabNav/OrdersIcon';
 import ProfileIcon from '../../assets/svg/BottomTabNav/ProfileIcon';
 import ShopyIcon from '../../assets/svg/BottomTabNav/ShopyIcon';
 import WishListIcon from '../../assets/svg/BottomTabNav/WhishListIcon';
-import { SafeAreaView } from "react-native-safe-area-context"
-import SafeAreaComponent from '../../Components/SafeAreaComponent';
+import { useSafeAreaInsets } from 'react-native-safe-area-context';
+import { Platform } from 'react-native';
+import { BelloraColors } from '../../assets/constants/enums';
+
 
 
 const Tab = createBottomTabNavigator<BottomTabParamList>();
 
-const BelloraColors = {
-  primary: '#6B3F24',
-  inactive: '#969696',
-  background: '#FFFFFF',
-  border: '#EAE3DC',
-};
 
 type TabIconName = keyof BottomTabParamList;
 
@@ -34,7 +30,7 @@ type TabIconProps = {
   color: string;
   size?: number;
 };
-
+const  TAB_BAR_CONTENT_HEIGHT =56;
 const TabIcon = ({
   name,
   color,
@@ -67,6 +63,8 @@ const TabIcon = ({
 };
 
 const BottomTabNavigation = () => {
+    const insets = useSafeAreaInsets();
+    const bottomInset = Math.max(insets.bottom, Platform.OS === 'android' ? 10: 0);
   return (
     <Tab.Navigator
       initialRouteName="Home"
@@ -88,10 +86,11 @@ const BottomTabNavigation = () => {
           fontSize: 11,
           fontWeight: '500',
           marginTop: 2,
+
         },
 
         tabBarStyle: {
-          height:"9.25%",
+          height: TAB_BAR_CONTENT_HEIGHT + bottomInset,
           paddingTop: 7,
           paddingBottom: 6,
           backgroundColor: BelloraColors.background,
