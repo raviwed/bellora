@@ -4,6 +4,7 @@ export const BelloraColors = {
   inactive: '#969696',
   background: '#FFFFFF',
   border: '#EAE3DC',
+  inputBorder:"#EBD8C8",
   placeholderColor:"rgb(179, 162, 153)",
 };
 

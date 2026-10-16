@@ -144,11 +144,12 @@ export const styles = StyleSheet.create({
     flexDirection: "row",
     justifyContent: "space-between",
     gap: 11,
+    marginTop:10,
   },
 
   socialButton: {
     flex: 1,
-    height: 35,
+    height: 45,
     borderRadius: 10,
     borderWidth: 1,
     borderColor: "#EBD8C8",
