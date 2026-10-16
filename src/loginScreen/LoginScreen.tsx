@@ -36,7 +36,7 @@ const LoginScreen = () => {
   const [emailOrMobile, setEmailOrMobile] = useState("");
   const [password, setPassword] = useState("");
   const  onButtonPress=()=>{
-    navigation.navigate(BelloraScreens.home)
+    navigation.navigate(BelloraScreens.mainTabs)
    }
   return (
     <ReusableAuthScreen
@@ -54,7 +54,6 @@ const LoginScreen = () => {
       signUpText={"Login"}
       beforeFields={
         <View>
-          {/* Full Name */}
           <TextInput
             style={[styles.textInput,styles.fullname]}
             placeholder="Full Name"

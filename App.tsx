@@ -35,10 +35,6 @@ const appScreens: AppScreen[] = [
     component: BottomTabNavigation,
   },
   {
-    name: BelloraScreens.home,
-    component: HomeScreen,
-  },
-  {
     name: BelloraScreens.logininScreen,
     component: LoginScreen,
   },
