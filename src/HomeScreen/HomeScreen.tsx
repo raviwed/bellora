@@ -41,6 +41,7 @@ const HomeScreen = () => {
             </View>
             <Carousel images={CourselImages} containerStyle={styles.containerBox}  />
             
+            
         </SafeAreaComponent>
     )
 }

@@ -3,7 +3,7 @@ import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 
 import type {BottomTabParamList} from './types';
 
-import HomeScreen from '../HomeScreen/HomeScreen';
+import HomeScreen from '../homeScreen/HomeScreen';
 import ShopScreen from '../shopScreen/ShopScreen';
 import WishListScreen from '../wishListScreen/WishListScreen';
 import OrderScreen from '../orderScreen/OrderScreen';

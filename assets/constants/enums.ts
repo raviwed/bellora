@@ -6,3 +6,12 @@ export const BelloraColors = {
   border: '#EAE3DC',
   placeholderColor:"rgb(179, 162, 153)",
 };
+
+export const BelloraScreens={
+  splashScreen:'splashScreen',
+  startonBoarding:'startonBoarding',
+  mainTabs:'mainTabs',
+  signInScreens:'signinScreen',
+  logininScreen:'loginScreen',
+  home:'homeScreen'
+} as const

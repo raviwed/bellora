@@ -10,6 +10,8 @@ import {
 import SafeAreaComponent from "../../Components/SafeAreaComponent";
 import { styles } from "./styles";
 import { useNavigation } from "@react-navigation/native";
+import { BelloraScreens } from "../../assets/constants/enums";
+import CommonButton from "../../Components/CommonBtn";
 
 const onboardingData = [
     {
@@ -53,7 +55,7 @@ const StartonBoarding = () => {
         if (!isLastScreen) {
             setCurrentIndex((prevIndex) => prevIndex + 1);
         } else {
-            navigation.navigate("MainTabs");
+            navigation.navigate(BelloraScreens.signInScreens);
         }
     };
 
@@ -105,16 +107,10 @@ const StartonBoarding = () => {
                         />
                     ))}
                 </View>
-
-                <TouchableOpacity
-                    style={styles.nextBtn}
-                    onPress={handleNext}
-                    activeOpacity={0.8}
-                >
-                    <Text style={styles.nextbtnTxt}>
-                        {isLastScreen ? "Get Started" : "Next"}
-                    </Text>
-                </TouchableOpacity>
+                <CommonButton
+                  title={isLastScreen ? "Get Started" : "Next"}
+                  onPress={handleNext}
+                 />
             </View>
         </SafeAreaComponent>
     );
