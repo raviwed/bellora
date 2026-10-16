@@ -1,27 +1,28 @@
-import React from 'react';
-import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 
-import type {BottomTabParamList} from './types';
+import React from "react";
+import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
+import { Platform } from "react-native";
+import { useSafeAreaInsets } from "react-native-safe-area-context";
 
-import HomeScreen from '../homeScreen/HomeScreen';
-import ShopScreen from '../shopScreen/ShopScreen';
-import WishListScreen from '../wishListScreen/WishListScreen';
-import OrderScreen from '../orderScreen/OrderScreen';
-import ProfileScreen from '../profileScreen/ProfileScreen';
+import type { BottomTabParamList } from "./types";
 
-import HomeIcon from '../../assets/svg/BottomTabNav/HomeIcon';
-import OrdersIcon from '../../assets/svg/BottomTabNav/OrdersIcon';
-import ProfileIcon from '../../assets/svg/BottomTabNav/ProfileIcon';
-import ShopyIcon from '../../assets/svg/BottomTabNav/ShopyIcon';
-import WishListIcon from '../../assets/svg/BottomTabNav/WhishListIcon';
-import { useSafeAreaInsets } from 'react-native-safe-area-context';
-import { Platform } from 'react-native';
-import { BelloraColors } from '../../assets/constants/enums';
+import HomeScreen from "../homeScreen/HomeScreen";
+import ShopScreen from "../shopScreen/ShopScreen";
+import WishListScreen from "../wishListScreen/WishListScreen";
+import OrderScreen from "../orderScreen/OrderScreen";
+import ProfileScreen from "../profileScreen/ProfileScreen";
 
+import HomeIcon from "../../assets/svg/BottomTabNav/HomeIcon";
+import OrdersIcon from "../../assets/svg/BottomTabNav/OrdersIcon";
+import ProfileIcon from "../../assets/svg/BottomTabNav/ProfileIcon";
+import ShopyIcon from "../../assets/svg/BottomTabNav/ShopyIcon";
+import WishListIcon from "../../assets/svg/BottomTabNav/WhishListIcon";
 
+import { BelloraColors } from "../../assets/constants/enums";
 
 const Tab = createBottomTabNavigator<BottomTabParamList>();
 
+const TAB_BAR_CONTENT_HEIGHT = 56;
 
 type TabIconName = keyof BottomTabParamList;
 
@@ -30,48 +31,58 @@ type TabIconProps = {
   color: string;
   size?: number;
 };
-const  TAB_BAR_CONTENT_HEIGHT =56;
+
+const TAB_CONFIG = [
+  { name: "Home", component: HomeScreen },
+  { name: "Shop", component: ShopScreen },
+  { name: "WishList", component: WishListScreen },
+  { name: "Orders", component: OrderScreen },
+  { name: "Profile", component: ProfileScreen },
+] satisfies {
+  name: TabIconName;
+  component: React.ComponentType;
+}[];
+
+const TAB_ICONS = {
+  Home: HomeIcon,
+  Shop: ShopyIcon,
+  WishList: WishListIcon,
+  Orders: OrdersIcon,
+  Profile: ProfileIcon,
+} satisfies Record<
+  TabIconName,
+  React.ComponentType<{
+    width?: number;
+    height?: number;
+    color?: string;
+  }>
+>;
+
 const TabIcon = ({
   name,
   color,
   size = 20,
 }: TabIconProps) => {
-  const iconProps = {
-    width: size,
-    height: size,
-    color,
-  };
+  const Icon = TAB_ICONS[name];
 
-  switch (name) {
-    case 'Home':
-      return <HomeIcon {...iconProps} />;
-
-    case 'Shop':
-      return <ShopyIcon {...iconProps} />;
-
-    case 'WishList':
-      return <WishListIcon {...iconProps} />;
-
-    case 'Orders':
-      return <OrdersIcon {...iconProps} />;
-
-    case 'Profile':
-      return <ProfileIcon {...iconProps} />;
-    default:
-      return null;
-  }
+  return <Icon width={size} height={size} color={color} />;
 };
 
 const BottomTabNavigation = () => {
-    const insets = useSafeAreaInsets();
-    const bottomInset = Math.max(insets.bottom, Platform.OS === 'android' ? 10: 0);
+  const insets = useSafeAreaInsets();
+
+  const bottomInset = Math.max(
+    insets.bottom,
+    Platform.OS === "android" ? 10 : 0,
+  );
+
   return (
     <Tab.Navigator
       initialRouteName="Home"
-      screenOptions={({route}) => ({
+      screenOptions={({ route }) => ({
         headerShown: false,
 
-        tabBarIcon: ({color, size}) => (
+        tabBarIcon: ({ color, size }) => (
           <TabIcon
             name={route.name}
             color={color}
@@ -84,9 +95,8 @@ const BottomTabNavigation = () => {
 
         tabBarLabelStyle: {
           fontSize: 11,
-          fontWeight: '500',
+          fontWeight: "500",
           marginTop: 2,
-
         },
 
         tabBarStyle: {
@@ -100,11 +110,13 @@ const BottomTabNavigation = () => {
         },
       })}
     >
-      <Tab.Screen name="Home" component={HomeScreen} />
-      <Tab.Screen name="Shop" component={ShopScreen} />
-      <Tab.Screen name="WishList" component={WishListScreen} />
-      <Tab.Screen name="Orders" component={OrderScreen} />
-      <Tab.Screen name="Profile" component={ProfileScreen} />
+      {TAB_CONFIG.map(({ name, component }) => (
+        <Tab.Screen
+          key={name}
+          name={name}
+          component={component}
+        />
+      ))}
     </Tab.Navigator>
   );
 };
