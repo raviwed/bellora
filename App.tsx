@@ -13,6 +13,7 @@ import SigninScreen from "./src/signinScreen/SigninScreen";
 import HomeScreen from "./src/homeScreen/HomeScreen";
 
 import { BelloraScreens } from "./assets/constants/enums";
+import HelpSupportScreen from "./src/helpSupport/HelpSupport";
 
 const Stack = createNativeStackNavigator<RootStackParamList>();
 
@@ -42,6 +43,10 @@ const appScreens: AppScreen[] = [
     name: BelloraScreens.signInScreens,
     component: SigninScreen,
   },
+  {
+     name: BelloraScreens.helpsupport,
+    component: HelpSupportScreen,
+  }
 ];
 
 function App() {
