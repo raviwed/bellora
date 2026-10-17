@@ -18,7 +18,7 @@ const onboardingData = [
         title: "Pure Ingredients",
         subtitle: "Real Good ness",
         description: [
-            "Made with natural jaggery",
+            "Made with natural jaggery,",
             "No refined sugar, no maida",
         ],
         image: require("../../assets/png/jaggery.png"),

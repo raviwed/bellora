@@ -3,7 +3,7 @@ import SafeAreaComponent from "../../Components/SafeAreaComponent"
 import Cart from '../../assets/svg/Cart.svg';
 import Notification from "../../assets/svg/Notification.svg"
 import Search from "../../assets/svg/Search.svg"
-import { styles } from "./styles";
+import { cardStyles, styles } from "./styles";
 import Carousel from "../../Components/Coursel";
 import { BelloraColors } from "../../assets/constants/enums";
 
@@ -11,9 +11,17 @@ export type CarouselImage = {
     id: string;
     source: ImageSourcePropType;
 };
-const ITEM_WIDTH = 80;
-const ITEM_GAP = 12;
 
+type ProductItem = {
+    id: string;
+    source: ImageSourcePropType;
+    name: string;
+    price: number;
+};
+
+// menuBox width (80) + horizontal margins (10 + 10) = 100 per item
+const ITEM_WIDTH = 80;
+const ITEM_GAP = 20;
 
 const menuItems: CarouselImage[] = [
     { id: "All", source: require('../../assets/png/biscut.png') },
@@ -21,9 +29,9 @@ const menuItems: CarouselImage[] = [
     { id: "Coconut", source: require('../../assets/png/coconutbiscut.png') },
     { id: "Oats", source: require('../../assets/png/otasBiscut.png') },
     { id: "Jowar", source: require('../../assets/png/Jowar.png') },
-]
-const numColumns=2;
-const jaggeryItem = [
+];
+
+const jaggeryItem: ProductItem[] = [
     {
         id: "jaggeryoats",
         source: require("../../assets/png/jaggeryoats.png"),
@@ -31,26 +39,32 @@ const jaggeryItem = [
         price: 160,
     },
     {
-        id: "drakchocochip",
+        id: "darkchocochip1",
         source: require("../../assets/png/drakchocochip.png"),
         name: "Dark Choco Chip",
         price: 180,
     },
-     {
-        id: "drakchocochip",
+    {
+        id: "darkchocochip2",
         source: require("../../assets/png/drakchocochip.png"),
         name: "Dark Choco Chip",
         price: 180,
     },
 ];
-const CourselImages: CarouselImage[] = [{ id: 'jaggery1', source: require('../../assets/png/jaggery1.png'), }, { id: 'jaggery2', source: require('../../assets/png/jaggery2.png'), }, { id: 'jaggery3', source: require('../../assets/png/jaggery3.png'), }, { id: 'jaggery4', source: require('../../assets/png/jaggery4.png'), }, { id: 'jaggery5', source: require('../../assets/png/jaggery5.png'), },]
+
+const CourselImages: CarouselImage[] = [
+    { id: 'jaggery1', source: require('../../assets/png/jaggery1.png') },
+    { id: 'jaggery2', source: require('../../assets/png/jaggery2.png') },
+    { id: 'jaggery3', source: require('../../assets/png/jaggery3.png') },
+    { id: 'jaggery4', source: require('../../assets/png/jaggery4.png') },
+    { id: 'jaggery5', source: require('../../assets/png/jaggery5.png') },
+];
+
 const HomeScreen = () => {
-    return (
-        <SafeAreaComponent>
-            <View style={styles.headerContainer} >
-                <Image
-                    source={require('../../assets/png/logo.png')}
-                />
+    const header = (
+        <View>
+            <View style={styles.headerContainer}>
+                <Image source={require('../../assets/png/logo.png')} />
                 <View style={styles.headerIcons}>
                     <TouchableOpacity style={{ marginRight: 10 }}>
                         <Notification height={30} width={30} />
@@ -63,14 +77,16 @@ const HomeScreen = () => {
                     </TouchableOpacity>
                 </View>
             </View>
-            <View style={styles.searchbox} >
+
+            <View style={styles.searchbox}>
                 <Search height={25} width={25} />
                 <TextInput
                     placeholder="search cookies flavours..."
-                    style={{ width: "90%", }}
+                    style={{ width: "90%" }}
                     placeholderTextColor={BelloraColors.placeholderColor}
                 />
             </View>
+
             <Carousel images={CourselImages} containerStyle={styles.containerBox} />
             <FlatList
                 data={menuItems}
@@ -80,6 +96,7 @@ const HomeScreen = () => {
                 snapToInterval={ITEM_WIDTH + ITEM_GAP}
                 decelerationRate="fast"
                 disableIntervalMomentum
+                nestedScrollEnabled
                 keyExtractor={(item) => item.id}
                 renderItem={({ item }) => (
                     <View style={styles.menuBox}>
@@ -88,34 +105,52 @@ const HomeScreen = () => {
                             style={styles.menuImage}
                             resizeMode="contain"
                         />
-                        <Text style={styles.menutxt}>{item.id}</Text>
+                        <Text style={styles.menutxt} numberOfLines={1}>{item.id}</Text>
                     </View>
                 )}
             />
-            <View style={styles.bestSellerContainer} >
-                <Text style={styles.bestSeller} >Best Seller</Text>
-                <Text style={styles.viewTxt} >View ALL</Text>
-            </View>
 
-          <FlatList
-           //key={`flatlist-columns-${numColumns}`}
-                data={ jaggeryItem}
-                horizontal
-                // numColumns={numColumns}
+            <View style={styles.bestSellerContainer}>
+                <Text style={styles.bestSeller}>Best Seller</Text>
+                <Text style={styles.viewTxt}>View ALL</Text>
+            </View>
+        </View>
+    );
+
+    return (
+        <SafeAreaComponent>
+            <FlatList
+                style={styles.screen}
+                data={jaggeryItem}
+                numColumns={2}
                 keyExtractor={(item) => item.id}
+                ListHeaderComponent={header}
+                showsVerticalScrollIndicator={false}
+                columnWrapperStyle={cardStyles.row}
+                contentContainerStyle={cardStyles.listContent}
                 renderItem={({ item }) => (
-                    <View style={[styles.menuBox]}>
+                    <View style={cardStyles.card}>
                         <Image
                             source={item.source}
-                            style={styles.menuImage}
-                            resizeMode="contain"
+                            style={cardStyles.cardImage}
+                            resizeMode="cover"
                         />
-                        <Text style={styles.menutxt}>{item.name}</Text>
+                        <View style={cardStyles.cardBody}>
+                            <Text style={cardStyles.cardName} numberOfLines={1}>
+                                {item.name}
+                            </Text>
+                            <View style={cardStyles.priceRow}>
+                                <Text style={cardStyles.price}>₹{item.price}</Text>
+                                <TouchableOpacity style={cardStyles.addBtn} activeOpacity={0.8}>
+                                    <Text style={cardStyles.addTxt}>+</Text>
+                                </TouchableOpacity>
+                            </View>
+                        </View>
                     </View>
                 )}
             />
-           
         </SafeAreaComponent>
     )
 }
+
 export default HomeScreen
