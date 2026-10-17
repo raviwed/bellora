@@ -70,8 +70,6 @@ const OrdersScreen = () => {
         <SafeAreaComponent>
             <View style={styles.container}>
                 <Text style={styles.title}>My Orders</Text>
-
-                {/* Filter chips */}
                 <View style={styles.filterRow}>
                     {FILTERS.map((filter) => {
                         const isActive = activeFilter === filter;
@@ -91,8 +89,6 @@ const OrdersScreen = () => {
                         );
                     })}
                 </View>
-
-                {/* Orders list (vertical scroll) */}
                 <FlatList
                     data={filteredOrders}
                     keyExtractor={(item) => item.id}

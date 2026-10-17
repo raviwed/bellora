@@ -1,9 +1,14 @@
-import { FlatList, Image, ImageSourcePropType, Text, TextInput, TouchableOpacity, View } from "react-native"
-import SafeAreaComponent from "../../Components/SafeAreaComponent"
+import { useRef, useState } from "react";
+import { FlatList, Image, ImageSourcePropType, Text, TextInput, TouchableOpacity, View } from "react-native";
+import { BottomSheetModal } from "@gorhom/bottom-sheet";
+
+import SafeAreaComponent from "../../Components/SafeAreaComponent";
+import CommonButton from "../../Components/CommonBtn";
+import BottomSheetComponent from "../../Components/BottomSheetComponent";
 import Cart from '../../assets/svg/Cart.svg';
-import Notification from "../../assets/svg/Notification.svg"
-import Search from "../../assets/svg/Search.svg"
-import { cardStyles, styles } from "./styles";
+import Notification from "../../assets/svg/Notification.svg";
+import Search from "../../assets/svg/Search.svg";
+import { cardStyles, sheetStyles, styles } from "./styles";
 import Carousel from "../../Components/Coursel";
 import { BelloraColors } from "../../assets/constants/enums";
 
@@ -19,7 +24,6 @@ type ProductItem = {
     price: number;
 };
 
-// menuBox width (80) + horizontal margins (10 + 10) = 100 per item
 const ITEM_WIDTH = 80;
 const ITEM_GAP = 20;
 
@@ -61,6 +65,22 @@ const CourselImages: CarouselImage[] = [
 ];
 
 const HomeScreen = () => {
+    const sheetRef = useRef<BottomSheetModal>(null);
+    const [selectedProduct, setSelectedProduct] = useState<ProductItem | null>(null);
+    const [quantity, setQuantity] = useState(1);
+
+    // Called when "+" is tapped on a card
+    const handleAddPress = (item: ProductItem) => {
+        setSelectedProduct(item);
+        setQuantity(1);
+        sheetRef.current?.present();   // <-- opens the sheet
+    };
+
+    const handleAddToCart = () => {
+        // add { ...selectedProduct, quantity } to your cart state / API here
+        sheetRef.current?.dismiss();
+    };
+
     const header = (
         <View>
             <View style={styles.headerContainer}>
@@ -141,7 +161,11 @@ const HomeScreen = () => {
                             </Text>
                             <View style={cardStyles.priceRow}>
                                 <Text style={cardStyles.price}>₹{item.price}</Text>
-                                <TouchableOpacity style={cardStyles.addBtn} activeOpacity={0.8}>
+                                <TouchableOpacity
+                                    onPress={() => handleAddPress(item)}
+                                    style={cardStyles.addBtn}
+                                    activeOpacity={0.8}
+                                >
                                     <Text style={cardStyles.addTxt}>+</Text>
                                 </TouchableOpacity>
                             </View>
@@ -149,8 +173,52 @@ const HomeScreen = () => {
                     </View>
                 )}
             />
-        </SafeAreaComponent>
-    )
-}
 
-export default HomeScreen
+            {/* ref is required, otherwise present() does nothing */}
+            <BottomSheetComponent ref={sheetRef} title="Add to Cart">
+                {selectedProduct && (
+                    <>
+                        <View style={sheetStyles.productRow}>
+                            <Image
+                                source={selectedProduct.source}
+                                style={sheetStyles.productImg}
+                                resizeMode="cover"
+                            />
+                            <View style={sheetStyles.productInfo}>
+                                <Text style={sheetStyles.productName}>{selectedProduct.name}</Text>
+                                <Text style={sheetStyles.productPrice}>₹{selectedProduct.price}</Text>
+                            </View>
+                        </View>
+
+                        <View style={sheetStyles.qtyRow}>
+                            <Text style={sheetStyles.qtyLabel}>Quantity</Text>
+                            <View style={sheetStyles.qtyBox}>
+                                <TouchableOpacity
+                                    style={sheetStyles.qtyBtn}
+                                    onPress={() => setQuantity((q) => Math.max(1, q - 1))}
+                                    disabled={quantity === 1}
+                                >
+                                    <Text style={[sheetStyles.qtyBtnTxt, quantity === 1 && sheetStyles.qtyDisabled]}>−</Text>
+                                </TouchableOpacity>
+                                <Text style={sheetStyles.qtyValue}>{quantity}</Text>
+                                <TouchableOpacity
+                                    style={sheetStyles.qtyBtn}
+                                    onPress={() => setQuantity((q) => q + 1)}
+                                >
+                                    <Text style={sheetStyles.qtyBtnTxt}>+</Text>
+                                </TouchableOpacity>
+                            </View>
+                        </View>
+
+                        <CommonButton
+                            title={`Add to Cart  •  ₹${selectedProduct.price * quantity}`}
+                            onPress={handleAddToCart}
+                        />
+                    </>
+                )}
+            </BottomSheetComponent>
+        </SafeAreaComponent>
+    );
+};
+
+export default HomeScreen;

@@ -14,6 +14,8 @@ import HomeScreen from "./src/homeScreen/HomeScreen";
 
 import { BelloraScreens } from "./assets/constants/enums";
 import HelpSupportScreen from "./src/helpSupport/HelpSupport";
+import { GestureHandlerRootView } from "react-native-gesture-handler";
+import { BottomSheetModalProvider } from "@gorhom/bottom-sheet";
 
 const Stack = createNativeStackNavigator<RootStackParamList>();
 
@@ -51,6 +53,8 @@ const appScreens: AppScreen[] = [
 
 function App() {
   return (
+    <GestureHandlerRootView style={{ flex: 1 }}>
+    <BottomSheetModalProvider>
     <NavigationContainer>
       <Stack.Navigator
         initialRouteName={BelloraScreens.splashScreen}
@@ -65,6 +69,8 @@ function App() {
         ))}
       </Stack.Navigator>
     </NavigationContainer>
+    </BottomSheetModalProvider>
+    </GestureHandlerRootView>
   );
 }
 
