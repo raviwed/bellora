@@ -1,4 +1,3 @@
-
 import React, { useState } from "react";
 import {
     Image,
@@ -16,7 +15,7 @@ import CommonButton from "../../Components/CommonBtn";
 const onboardingData = [
     {
         title: "Pure Ingredients",
-        subtitle: "Real Good ness",
+        subtitle: "Real Goodness",
         description: [
             "Made with natural jaggery,",
             "No refined sugar, no maida",
@@ -24,11 +23,11 @@ const onboardingData = [
         image: require("../../assets/png/jaggery.png"),
     },
     {
-        title: "WholeSome",
-        subtitle: "Delicious",
+        title: "Wholesome",
+        subtitle: "& Delicious",
         description: [
             "Soft, light and easy to digest",
-            "Good ness in every bite",
+            "Goodness in every bite",
         ],
         image: require("../../assets/png/biscut.png"),
     },
@@ -36,8 +35,8 @@ const onboardingData = [
         title: "Better Choices",
         subtitle: "For Healthier You",
         description: [
-            "jaggery based. No perservatives",
-            "just pure, natural ingredients",
+            "Jaggery based. No preservatives",
+            "Just pure, natural ingredients",
         ],
         image: require("../../assets/png/boxbiscut.png"),
     },
@@ -48,8 +47,7 @@ const StartonBoarding = () => {
     const navigation = useNavigation<any>();
 
     const currentScreen = onboardingData[currentIndex];
-    const isLastScreen =
-        currentIndex === onboardingData.length - 1;
+    const isLastScreen = currentIndex === onboardingData.length - 1;
 
     const handleNext = () => {
         if (!isLastScreen) {
@@ -67,50 +65,50 @@ const StartonBoarding = () => {
                     style={styles.logoImage}
                     resizeMode="contain"
                 />
+                <View style={styles.textBlock}>
+                    <View style={styles.titleContainer}>
+                        <Text style={styles.pureTxt}>{currentScreen.title}</Text>
+                        <Text style={styles.subtitleTxt}>{currentScreen.subtitle}</Text>
+                    </View>
 
-                <View style={styles.titleContainer}>
-                    <Text style={styles.pureTxt}>
-                        {currentScreen.title}
-                    </Text>
-
-                    <Text style={styles.subtitleTxt}>
-                        {currentScreen.subtitle}
-                    </Text>
+                    <View style={styles.madejaggery}>
+                        <Text style={styles.descriptionTxt}>
+                            {currentScreen.description[0]}
+                        </Text>
+                        <Text style={styles.descriptionTxt}>
+                            {currentScreen.description[1]}
+                        </Text>
+                    </View>
                 </View>
-                <View style={styles.madejaggery}>
-                    <Text style={styles.descriptionTxt}>
-                        {currentScreen.description[0]}
-                    </Text>
-                    <Text style={styles.descriptionTxt}>
-                        {currentScreen.description[1]}
-                    </Text>
+                <View style={styles.imageWrapper}>
+                    <Image
+                        source={currentScreen.image}
+                        style={styles.jaggeryImage}
+                        resizeMode="cover"
+                    />
                 </View>
+                <View style={styles.bottomSection}>
+                    <View style={styles.pagination}>
+                        {onboardingData.map((_, index) => (
+                            <TouchableOpacity
+                                key={index}
+                                onPress={() => setCurrentIndex(index)}
+                                activeOpacity={0.7}
+                                accessibilityLabel={`Go to onboarding page ${index + 1}`}
+                                accessibilityRole="button"
+                                style={[
+                                    styles.dot,
+                                    currentIndex === index && styles.activeDot,
+                                ]}
+                            />
+                        ))}
+                    </View>
 
-                <Image
-                    source={currentScreen.image}
-                    style={styles.jaggeryImage}
-                    resizeMode="contain"
-                />
-
-                <View style={styles.pagination}>
-                    {onboardingData.map((_, index) => (
-                        <TouchableOpacity
-                            key={index}
-                            onPress={() => setCurrentIndex(index)}
-                            activeOpacity={0.7}
-                            accessibilityLabel={`Go to onboarding page ${index + 1}`}
-                            accessibilityRole="button"
-                            style={[
-                                styles.dot,
-                                currentIndex === index && styles.activeDot,
-                            ]}
-                        />
-                    ))}
+                    <CommonButton
+                        title={isLastScreen ? "Get Started" : "Next"}
+                        onPress={handleNext}
+                    />
                 </View>
-                <CommonButton
-                  title={isLastScreen ? "Get Started" : "Next"}
-                  onPress={handleNext}
-                 />
             </View>
         </SafeAreaComponent>
     );

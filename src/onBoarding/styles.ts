@@ -1,91 +1,102 @@
-
 import { StyleSheet } from "react-native";
 
 export const styles = StyleSheet.create({
-  pureIngredient: {
-    flex: 1,
-    alignItems: "center",
-    justifyContent: "space-between",
-    paddingHorizontal: 24,
-    paddingTop: 24,
-    paddingBottom: 20,
-  },
+    pureIngredient: {
+        flex: 1,
+        alignItems: "center",
+        paddingHorizontal: 24,
+        paddingTop: 24,
+        paddingBottom: 20,
+    },
 
-  logoImage: {
-    width: 140,
-    height: 70,
-    resizeMode: "contain",
-  },
+    logoImage: {
+        width: 140,
+        height: 70,
+    },
 
-  pureTxt: {
-    fontSize: 40,
-    fontFamily:"BelloraHeading-Bold",
-    color: "#765047",
-  },
+    pureTxt: {
+        fontSize: 40,
+        lineHeight: 48,
+        textAlign: "center",
+        fontFamily: "BelloraHeading-Bold",
+        color: "#765047",
+    },
 
-  madejaggery: {
-    alignItems: "center",
-    gap: 6,
-  },
+    subtitleTxt: {
+        fontSize: 40,
+        lineHeight: 48,
+        textAlign: "center",
+        fontFamily: "BelloraHeading-Bold",
+        color: "#765047",
+    },
+    
+    jaggeryImage: {
+        width: 300,
+        height: 300,
+        borderRadius: 150,
+        overflow: "hidden",
+    },
 
-  jaggeryImage: {
-  width: 300,
-  height: 300,
-  borderRadius: 150,
-  overflow: "hidden",
-  alignSelf: "center",
-  resizeMode: "cover",
-  },
+    bottomSection: {
+        width: "100%",
+        alignItems: "center",
+    },
 
-  pagination: {
-    flexDirection: "row",
-    alignItems: "center",
-    justifyContent: "center",
-    gap: 8,
-    marginTop: 12,
-    marginBottom: 12,
-  },
+    pagination: {
+        flexDirection: "row",
+        alignItems: "center",
+        justifyContent: "center",
+        gap: 8,
+        marginBottom: 16,
+    },
 
-  dot: {
-    width: 8,
-    height: 8,
-    borderRadius: 4,
-    backgroundColor: "#D8C8C0",
-  },
+    dot: {
+        width: 8,
+        height: 8,
+        borderRadius: 4,
+        backgroundColor: "#D8C8C0",
+    },
 
-  activeDot: {
-    width: 24,
-    height: 8,
-    borderRadius: 4,
-    backgroundColor: "#765047",
-  },
+    activeDot: {
+        width: 24,
+        height: 8,
+        borderRadius: 4,
+        backgroundColor: "#765047",
+    },
 
-  nextBtn: {
-    width: "100%",
-    height: 52,
-    borderRadius: 12,
-    alignItems: "center",
-    justifyContent: "center",
-    backgroundColor: "#765047",
-  },
+    textBlock: {
+        width: "100%",
+        alignItems: "center",
+        marginTop: 24,
+        gap: 12,
+    },
 
-  nextbtnTxt: {
-    fontSize: 16,
-    fontWeight: "600",
-    color: "#FFFFFF",
-  },
+    titleContainer: {
+        width: "100%",
+        alignItems: "center",
+    },
 
-  titleContainer: {
-  gap: 4,
-  },
+    madejaggery: {
+        width: "100%",
+        alignItems: "center",
+        gap: 4,
+    },
 
-subtitleTxt: {
-  fontSize: 40,
-  color: "#765047",
- fontFamily:"BelloraHeading-Bold",
-},
-descriptionTxt:{
-    fontFamily:"BelloraDescription-Regular",
-    color:"#765047",
-}
+    descriptionTxt: {
+        width: "100%",
+        fontFamily: "BelloraLogo-Regular",
+        color: "#765047",
+        fontSize: 16,
+        lineHeight: 22,
+        textAlign: "center",
+    },
+
+    imageWrapper: {
+        flex: 1,
+        width: "100%",
+        justifyContent: "center",
+        alignItems: "center",
+        minHeight: 0,
+        overflow: "hidden",
+    },
 });
