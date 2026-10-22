@@ -9,6 +9,8 @@ export type RootStackParamList = {
   [BelloraScreens.home]: undefined;
   [BelloraScreens.mainTabs]: undefined;
   [BelloraScreens.helpsupport]:undefined;
+  [BelloraScreens.singleProductPage]:undefined;
+  [BelloraScreens.otpScreenPage]:undefined;
 };
 export type BottomTabParamList = {
   Home: undefined;

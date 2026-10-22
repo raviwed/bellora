@@ -16,6 +16,8 @@ import { BelloraScreens } from "./assets/constants/enums";
 import HelpSupportScreen from "./src/helpSupport/HelpSupport";
 import { GestureHandlerRootView } from "react-native-gesture-handler";
 import { BottomSheetModalProvider } from "@gorhom/bottom-sheet";
+import SingleProductPage from "./src/singleProductPage/SingleProductPage";
+import OtpVerificationScreen from "./src/otpVerificationScreen/OtpVerificationScreen";
 
 const Stack = createNativeStackNavigator<RootStackParamList>();
 
@@ -48,6 +50,14 @@ const appScreens: AppScreen[] = [
   {
      name: BelloraScreens.helpsupport,
     component: HelpSupportScreen,
+  },
+  {
+    name:BelloraScreens.singleProductPage,
+    component:SingleProductPage,
+  },
+  {
+    name:BelloraScreens.otpScreenPage,
+    component:OtpVerificationScreen,
   }
 ];
 

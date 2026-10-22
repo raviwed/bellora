@@ -1,6 +1,5 @@
 import React, { useMemo, useState } from "react";
 import { FlatList, Text, TouchableOpacity, View } from "react-native";
-
 import SafeAreaComponent from "../../Components/SafeAreaComponent";
 import { styles } from "./styles";
 

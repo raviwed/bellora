@@ -17,5 +17,7 @@ export const BelloraScreens={
   signInScreens:'signinScreen',
   logininScreen:'loginScreen',
   home:'homeScreen',
-  helpsupport:"helpsupport"
+  helpsupport:"helpsupport",
+  singleProductPage:"singleProductPage",
+  otpScreenPage:"otpScreenPage",
 } as const

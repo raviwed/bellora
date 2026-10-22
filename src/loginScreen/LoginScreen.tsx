@@ -34,9 +34,8 @@ const LoginScreen = () => {
 
   const [fullName, setFullName] = useState("");
   const [emailOrMobile, setEmailOrMobile] = useState("");
-  const [password, setPassword] = useState("");
   const  onButtonPress=()=>{
-    navigation.navigate(BelloraScreens.mainTabs)
+    navigation.navigate(BelloraScreens.otpScreenPage)
    }
   return (
     <ReusableAuthScreen

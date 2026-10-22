@@ -18,6 +18,13 @@ const config = {
   resolver: {
     assetExts: assetExts.filter(ext => ext !== 'svg'),
     sourceExts: [...sourceExts, 'svg'],
+     blockList: [
+      /android\/build\/.*/,
+      /android\/app\/build\/.*/,
+      /android\/\.gradle\/.*/,
+      /ios\/Pods\/.*/,
+      /ios\/build\/.*/,
+    ],
   },
 };
 
