@@ -1,10 +1,5 @@
 import { StyleSheet } from "react-native";
-
-const TEXT_DARK = "#3B2314";
-const TEXT_MUTED = "#8C7A6C";
-const DIVIDER = "#EADBCB";
-const CARD_BG = "#F5E8D8";
-const CARD_BORDER = "#EBD9C2";
+import { BelloraColors } from "../../assets/constants/enums";
 
 export const styles = StyleSheet.create({
     flex: {
@@ -24,7 +19,7 @@ export const styles = StyleSheet.create({
     },
     headerTitle: {
         fontSize: 18,
-        color: TEXT_DARK,
+        color: BelloraColors.textDark,
         fontFamily: "BelloraHeading-Bold",
     },
 
@@ -45,7 +40,7 @@ export const styles = StyleSheet.create({
         justifyContent: "space-between",
         paddingVertical: 16,
         borderBottomWidth: 1,
-        borderBottomColor: DIVIDER,
+        borderBottomColor: BelloraColors.divider,
     },
     menuLeft: {
         flexDirection: "row",
@@ -54,28 +49,28 @@ export const styles = StyleSheet.create({
     },
     menuTxt: {
         fontSize: 15,
-        color: TEXT_DARK,
+        color: BelloraColors.textDark,
         fontFamily: "BelloraDescription-Regular",
     },
 
     // Need more help card
     helpCard: {
-        backgroundColor: CARD_BG,
+        backgroundColor: BelloraColors.cardBackground,
         borderRadius: 14,
         borderWidth: 1,
-        borderColor: CARD_BORDER,
+        borderColor: BelloraColors.avatarBackground,
         padding: 16,
     },
     helpCardTitle: {
         fontSize: 15,
-        color: TEXT_DARK,
+        color: BelloraColors.textDark,
         fontFamily: "BelloraHeading-Bold",
     },
     helpCardSubtitle: {
         marginTop: 2,
         marginBottom: 14,
         fontSize: 12,
-        color: TEXT_MUTED,
+        color: BelloraColors.textMuted,
         fontFamily: "BelloraDescription-Regular",
     },
 });

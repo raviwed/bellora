@@ -383,9 +383,9 @@ export const styles = StyleSheet.create({
         height: 45,
         width: "100%",
         borderWidth: 1,
-        borderColor: "#EBD8C8",
+        borderColor: BelloraColors.inputBorder,
         borderRadius: 10,
-        backgroundColor: "#FFFEFC",
+        backgroundColor: BelloraColors.inputBackground,
         flexDirection: "row",
         alignItems: "center",
         paddingHorizontal: 11,
@@ -393,7 +393,7 @@ export const styles = StyleSheet.create({
 
     inputIcon: {
         fontSize: 15,
-        color: "#B59B89",
+        color: BelloraColors.dividerText,
         marginRight: 9,
         width: 10,
         textAlign: "center",
@@ -413,14 +413,14 @@ export const styles = StyleSheet.create({
         marginBottom: 6,
     },
     fullname: {
-        backgroundColor: "#fff",
+        backgroundColor: BelloraColors.white,
         padding: 13,
         borderRadius:10,
         borderWidth: 1,
         borderColor: BelloraColors.inputBorder,
     },
    emailMobile:{
-     backgroundColor: "#fff",
+     backgroundColor: BelloraColors.white,
         padding: 13,
         borderRadius:10,
         borderWidth: 1,
@@ -433,7 +433,7 @@ export const styles = StyleSheet.create({
     },
 
     eyeIcon: {
-        color: "#A38B7B",
+        color: BelloraColors.eyeIcon,
         fontSize: 14,
     },
 
@@ -445,13 +445,13 @@ export const styles = StyleSheet.create({
 
     forgotPass: {
         fontSize: 14,
-        color: "#E58B32",
+        color: BelloraColors.orange,
     },
 
     btnStyles: {
         height: 50,
         borderRadius: 9,
-        backgroundColor: "#713B20",
+        backgroundColor: BelloraColors.chocolate,
         width: "100%",
         marginTop: 20,
         justifyContent: "center",
@@ -468,12 +468,12 @@ export const styles = StyleSheet.create({
     divider: {
         flex: 1,
         height: 1,
-        backgroundColor: "#EFDFD2",
+        backgroundColor: BelloraColors.authDivider,
     },
 
     dividerText: {
         fontSize: 9,
-        color: "#B59B89",
+        color: BelloraColors.dividerText,
         marginHorizontal: 8,
     },
 
@@ -489,15 +489,15 @@ export const styles = StyleSheet.create({
         height: 45,
         borderRadius: 10,
         borderWidth: 1,
-        borderColor: "#EBD8C8",
-        backgroundColor: "#FFFEFC",
+        borderColor: BelloraColors.inputBorder,
+        backgroundColor: BelloraColors.inputBackground,
         alignItems: "center",
         justifyContent: "center",
     },
 
     socialText: {
         fontSize: 9,
-        color: "#35261E",
+        color: BelloraColors.espresso,
     },
 
     signupContainer: {
@@ -511,12 +511,12 @@ export const styles = StyleSheet.create({
 
     signupText: {
         fontSize: 9,
-        color: "#9F8878",
+        color: BelloraColors.signupText,
     },
 
     signupLink: {
         fontSize: 9,
-        color: "#713B20",
+        color: BelloraColors.chocolate,
         fontWeight: "500",
     },
     pageLastTxt: {

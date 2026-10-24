@@ -39,7 +39,7 @@ const HelpSupportScreen = () => {
                     accessibilityRole="button"
                     accessibilityLabel="Go back"
                 >
-                    {/* <Icon name="arrow-left" size={22} color="#3B2314" /> */}
+                    {/* <Icon name="arrow-left" size={22} color={BelloraColors.textDark} /> */}
                 </TouchableOpacity>
                 <Text style={styles.headerTitle}>Help & Support</Text>
             </View>
@@ -59,10 +59,10 @@ const HelpSupportScreen = () => {
                             accessibilityRole="button"
                         >
                             <View style={styles.menuLeft}>
-                                {/* <Icon name={item.icon} size={18} color="#3B2314" /> */}
+                                {/* <Icon name={item.icon} size={18} color={BelloraColors.textDark} /> */}
                                 <Text style={styles.menuTxt}>{item.label}</Text>
                             </View>
-                            {/* <Icon name="chevron-right" size={20} color="#A89484" /> */}
+                            {/* <Icon name="chevron-right" size={20} color={BelloraColors.chevron} /> */}
                         </TouchableOpacity>
                     ))}
                 </View>

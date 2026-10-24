@@ -1,4 +1,5 @@
 import { StyleSheet } from "react-native";
+import { BelloraColors } from "../../assets/constants/enums";
 
 export const styles = StyleSheet.create({
     pureIngredient: {
@@ -19,7 +20,7 @@ export const styles = StyleSheet.create({
         lineHeight: 48,
         textAlign: "center",
         fontFamily: "BelloraHeading-Bold",
-        color: "#765047",
+        color: BelloraColors.cocoa,
     },
 
     subtitleTxt: {
@@ -27,7 +28,7 @@ export const styles = StyleSheet.create({
         lineHeight: 48,
         textAlign: "center",
         fontFamily: "BelloraHeading-Bold",
-        color: "#765047",
+        color: BelloraColors.cocoa,
     },
     
     jaggeryImage: {
@@ -54,14 +55,14 @@ export const styles = StyleSheet.create({
         width: 8,
         height: 8,
         borderRadius: 4,
-        backgroundColor: "#D8C8C0",
+        backgroundColor: BelloraColors.onboardingDotInactive,
     },
 
     activeDot: {
         width: 24,
         height: 8,
         borderRadius: 4,
-        backgroundColor: "#765047",
+        backgroundColor: BelloraColors.cocoa,
     },
 
     textBlock: {
@@ -85,7 +86,7 @@ export const styles = StyleSheet.create({
     descriptionTxt: {
         width: "100%",
         fontFamily: "BelloraLogo-Regular",
-        color: "#765047",
+        color: BelloraColors.cocoa,
         fontSize: 16,
         lineHeight: 22,
         textAlign: "center",

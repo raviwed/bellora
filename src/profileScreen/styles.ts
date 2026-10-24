@@ -1,9 +1,5 @@
 import { StyleSheet } from "react-native";
-
-const TEXT_DARK = "#3B2314";
-const TEXT_MUTED = "#8C7A6C";
-const DIVIDER = "#EADBCB";
-const AVATAR_BG = "#EBD9C2";
+import { BelloraColors } from "../../assets/constants/enums";
 
 export const styles = StyleSheet.create({
     container: {
@@ -17,7 +13,7 @@ export const styles = StyleSheet.create({
 
     title: {
         fontSize: 24,
-        color: TEXT_DARK,
+        color: BelloraColors.textDark,
         fontFamily: "BelloraHeading-Bold",
     },
 
@@ -32,13 +28,13 @@ export const styles = StyleSheet.create({
         width: 68,
         height: 68,
         borderRadius: 34,
-        backgroundColor: AVATAR_BG,
+        backgroundColor: BelloraColors.avatarBackground,
         alignItems: "center",
         justifyContent: "center",
     },
     avatarTxt: {
         fontSize: 22,
-        color: TEXT_DARK,
+        color: BelloraColors.textDark,
         fontFamily: "BelloraHeading-Bold",
     },
     userInfo: {
@@ -47,13 +43,13 @@ export const styles = StyleSheet.create({
     },
     userName: {
         fontSize: 17,
-        color: TEXT_DARK,
+        color: BelloraColors.textDark,
         fontFamily: "BelloraHeading-Bold",
     },
     userEmail: {
         marginTop: 2,
         fontSize: 12,
-        color: TEXT_MUTED,
+        color: BelloraColors.textMuted,
         fontFamily: "BelloraDescription-Regular",
     },
     editBtn: {
@@ -70,7 +66,7 @@ export const styles = StyleSheet.create({
         justifyContent: "space-between",
         paddingVertical: 16,
         borderBottomWidth: 1,
-        borderBottomColor: DIVIDER,
+        borderBottomColor: BelloraColors.divider,
     },
     menuRowLast: {
         borderBottomWidth: 1,
@@ -82,7 +78,7 @@ export const styles = StyleSheet.create({
     },
     menuTxt: {
         fontSize: 15,
-        color: TEXT_DARK,
+        color: BelloraColors.textDark,
         fontFamily: "BelloraDescription-Regular",
     },
 });

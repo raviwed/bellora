@@ -8,6 +8,7 @@ import {
   TextStyle,
   TouchableOpacityProps,
 } from 'react-native';
+import { BelloraColors } from '../assets/constants/enums';
 
 type CommonButtonProps = {
   title: string;
@@ -48,12 +49,12 @@ const styles = StyleSheet.create({
     borderRadius: 12,
     alignItems: 'center',
     justifyContent: 'center',
-    backgroundColor: '#765047',
+    backgroundColor: BelloraColors.cocoa,
   },
   buttonText: {
     fontSize: 16,
     fontWeight: '600',
-    color: '#FFFFFF',
+    color: BelloraColors.white,
   },
 });
 

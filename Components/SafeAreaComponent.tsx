@@ -7,6 +7,7 @@ import {
   type ImageSourcePropType,
 } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context"
+import { BelloraColors } from "../assets/constants/enums";
 
 const defaultBackgroundImage = require("../assets/png/belloraBackground.png");
 
@@ -41,7 +42,7 @@ const styles = StyleSheet.create({
 
   safeArea: {
     flex: 1,
-    backgroundColor: 'transparent',
+    backgroundColor: BelloraColors.transparent,
   },
 
   backgroundImage: {
@@ -63,13 +64,13 @@ const styles = StyleSheet.create({
   title: {
     fontSize: 32,
     fontWeight: '700',
-    color: '#FFFFFF',
+    color: BelloraColors.white,
   },
 
   subtitle: {
     marginTop: 8,
     fontSize: 16,
-    color: '#FFFFFF',
+    color: BelloraColors.white,
   },
 });
 

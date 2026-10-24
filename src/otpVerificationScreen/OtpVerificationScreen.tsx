@@ -11,10 +11,10 @@ import {
 } from "react-native"
 import Svg, { Ellipse, Path } from "react-native-svg"
 import SafeAreaComponent from "../../Components/SafeAreaComponent"
-import { styles, COLORS } from "./styles"
+import { styles } from "./styles"
 import { NavigationProp, useNavigation } from "@react-navigation/native"
 import { RootStackParamList } from "../navigation/types"
-import { BelloraScreens } from "../../assets/constants/enums"
+import { BelloraColors, BelloraScreens } from "../../assets/constants/enums"
 
 const OTP_LENGTH = 6
 const RESEND_SECONDS = 45
@@ -26,7 +26,7 @@ const BackIcon = () => (
     <Svg width={24} height={24} viewBox="0 0 24 24" fill="none">
         <Path
             d="M19 12H5M11 6l-6 6 6 6"
-            stroke={COLORS.title}
+            stroke={BelloraColors.titleBrown}
             strokeWidth="1.8"
             strokeLinecap="round"
             strokeLinejoin="round"
@@ -36,23 +36,23 @@ const BackIcon = () => (
 
 const SproutIcon = () => (
     <Svg width={30} height={30} viewBox="0 0 30 30" fill="none">
-        <Path d="M15 28V14" stroke={COLORS.title} strokeWidth="1.6" strokeLinecap="round" />
-        <Path d="M15 15C15 9 11 5 5 4c0 6 3 10 10 11z" fill={COLORS.title} />
-        <Path d="M15 12C15 7 18 3 24 2c0 5-3 9-9 10z" fill={COLORS.title} />
+        <Path d="M15 28V14" stroke={BelloraColors.titleBrown} strokeWidth="1.6" strokeLinecap="round" />
+        <Path d="M15 15C15 9 11 5 5 4c0 6 3 10 10 11z" fill={BelloraColors.titleBrown} />
+        <Path d="M15 12C15 7 18 3 24 2c0 5-3 9-9 10z" fill={BelloraColors.titleBrown} />
     </Svg>
 )
 const BranchDecoration = () => (
     <Svg width={170} height={230} viewBox="0 0 170 230" fill="none">
         <Path
             d="M10 230C25 170 55 110 100 40"
-            stroke={COLORS.leaf}
+            stroke={BelloraColors.leaf}
             strokeWidth="1.5"
             strokeLinecap="round"
         />
-        <Ellipse cx="62" cy="120" rx="34" ry="13" transform="rotate(-25 62 120)" stroke={COLORS.leaf} strokeWidth="1.5" />
-        <Ellipse cx="38" cy="168" rx="36" ry="13" transform="rotate(-10 38 168)" stroke={COLORS.leaf} strokeWidth="1.5" />
-        <Ellipse cx="92" cy="70" rx="30" ry="11" transform="rotate(-55 92 70)" stroke={COLORS.leaf} strokeWidth="1.5" />
-        <Ellipse cx="22" cy="206" rx="30" ry="11" transform="rotate(8 22 206)" stroke={COLORS.leaf} strokeWidth="1.5" />
+        <Ellipse cx="62" cy="120" rx="34" ry="13" transform="rotate(-25 62 120)" stroke={BelloraColors.leaf} strokeWidth="1.5" />
+        <Ellipse cx="38" cy="168" rx="36" ry="13" transform="rotate(-10 38 168)" stroke={BelloraColors.leaf} strokeWidth="1.5" />
+        <Ellipse cx="92" cy="70" rx="30" ry="11" transform="rotate(-55 92 70)" stroke={BelloraColors.leaf} strokeWidth="1.5" />
+        <Ellipse cx="22" cy="206" rx="30" ry="11" transform="rotate(8 22 206)" stroke={BelloraColors.leaf} strokeWidth="1.5" />
     </Svg>
 )
 
@@ -180,7 +180,7 @@ const OtpVerificationScreen = ({
                                 onFocus={() => setFocusedIndex(i)}
                                 onBlur={() => setFocusedIndex(null)}
                                 keyboardType="number-pad"
-                                maxLength={i === 0 ? OTP_LENGTH : 1} // first box allows paste of full code
+                                maxLength={i === 0 ? OTP_LENGTH : 1}
                                 textContentType="oneTimeCode"
                                 autoComplete="sms-otp"
                                 autoFocus={i === 0}
@@ -189,8 +189,6 @@ const OtpVerificationScreen = ({
                             />
                         ))}
                     </View>
-
-                    {/* Resend */}
                     <View style={styles.resendRow}>
                         {secondsLeft > 0 ? (
                             <Text style={styles.resendTxt}>

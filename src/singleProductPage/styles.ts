@@ -1,18 +1,7 @@
 import { Dimensions, StyleSheet } from "react-native"
+import { BelloraColors } from "../../assets/constants/enums";
 
 const { width, height } = Dimensions.get("window")
-
-export const COLORS = {
-    background: "#FFF6F0",
-    title: "#3B2314",
-    muted: "#8C7568",
-    border: "#E6D2C2",
-    star: "#E8962E",
-    greenBg: "#E3F2E1",
-    greenTxt: "#3E8E41",
-    button: "#5A3220",
-    white: "#FFFFFF",
-}
 
 const FONTS = {
     serifBold: "PlayfairDisplay-Bold",
@@ -25,7 +14,7 @@ const FONTS = {
 export const styles = StyleSheet.create({
     root: {
         flex: 1,
-        backgroundColor: COLORS.background,
+        backgroundColor: BelloraColors.cream,
     },
     image: {
         width,
@@ -48,7 +37,7 @@ export const styles = StyleSheet.create({
         width: 36,
         height: 36,
         borderRadius: 18,
-        backgroundColor: COLORS.white,
+        backgroundColor: BelloraColors.white,
         alignItems: "center",
         justifyContent: "center",
     },
@@ -69,10 +58,10 @@ export const styles = StyleSheet.create({
     title: {
         fontFamily: FONTS.serifBold,
         fontSize: 21,
-        color: COLORS.title,
+        color: BelloraColors.textDark,
     },
     inStockValue: {
-        backgroundColor: COLORS.greenBg,
+        backgroundColor: BelloraColors.successBackground,
         paddingHorizontal: 10,
         paddingVertical: 4,
         borderRadius: 12,
@@ -80,7 +69,7 @@ export const styles = StyleSheet.create({
     inStockTxt: {
         fontFamily: FONTS.medium,
         fontSize: 10.5,
-        color: COLORS.greenTxt,
+        color: BelloraColors.successText,
     },
 
     ratingRow: {
@@ -96,7 +85,7 @@ export const styles = StyleSheet.create({
     ratingTxt: {
         fontFamily: FONTS.regular,
         fontSize: 11.5,
-        color: COLORS.muted,
+        color: BelloraColors.textSubtle,
     },
 
     priceRow: {
@@ -108,12 +97,12 @@ export const styles = StyleSheet.create({
     price: {
         fontFamily: FONTS.bold,
         fontSize: 24,
-        color: COLORS.title,
+        color: BelloraColors.textDark,
     },
     oldPrice: {
         fontFamily: FONTS.regular,
         fontSize: 12.5,
-        color: COLORS.muted,
+        color: BelloraColors.textSubtle,
         textDecorationLine: "line-through",
     },
 
@@ -132,22 +121,22 @@ export const styles = StyleSheet.create({
         height: 40,
         borderRadius: 20,
         borderWidth: 1,
-        borderColor: COLORS.border,
-        backgroundColor: COLORS.white,
+        borderColor: BelloraColors.productBorder,
+        backgroundColor: BelloraColors.white,
         alignItems: "center",
         justifyContent: "center",
     },
     featureTxt: {
         fontFamily: FONTS.regular,
         fontSize: 10.5,
-        color: COLORS.muted,
+        color: BelloraColors.textSubtle,
     },
 
     description: {
         fontFamily: FONTS.regular,
         fontSize: 13,
         lineHeight: 19,
-        color: COLORS.muted,
+        color: BelloraColors.textSubtle,
         marginTop: 18,
     },
 
@@ -166,25 +155,25 @@ export const styles = StyleSheet.create({
         paddingHorizontal: 12,
         borderRadius: 8,
         borderWidth: 1,
-        borderColor: COLORS.border,
-        backgroundColor: COLORS.white,
+        borderColor: BelloraColors.productBorder,
+        backgroundColor: BelloraColors.white,
     },
     qtyTxt: {
         fontFamily: FONTS.semiBold,
         fontSize: 14,
-        color: COLORS.title,
+        color: BelloraColors.textDark,
     },
     addBtn: {
         flex: 1,
         height: 48,
         borderRadius: 14,
-        backgroundColor: COLORS.button,
+        backgroundColor: BelloraColors.buttonBrown,
         alignItems: "center",
         justifyContent: "center",
     },
     addBtnTxt: {
         fontFamily: FONTS.semiBold,
         fontSize: 15,
-        color: COLORS.white,
+        color: BelloraColors.white,
     },
 })

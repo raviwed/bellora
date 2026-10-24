@@ -1,13 +1,5 @@
 import { StyleSheet } from "react-native";
-
-/* ---------- Theme ---------- */
-export const COLORS = {
-  background: '#FFF6F0',
-  card: '#FFFFFF',
-  border: '#EBD3BF',
-  title: '#4A2C1A',
-  subtitle: '#8C7568',
-};
+import { BelloraColors } from "../../assets/constants/enums";
 
 // Montserrat is used in the design. Change to your own font names,
 // or remove fontFamily to use the system font.
@@ -19,7 +11,7 @@ export const FONTS = {
 export const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: COLORS.background,
+    backgroundColor: BelloraColors.cream,
   },
   header: {
     flexDirection: 'row',
@@ -32,7 +24,7 @@ export const styles = StyleSheet.create({
   headerTitle: {
     fontFamily: FONTS.semiBold,
     fontSize: 18,
-    color: COLORS.title,
+    color: BelloraColors.titleBrown,
   },
   list: {
     paddingHorizontal: 20,
@@ -42,9 +34,9 @@ export const styles = StyleSheet.create({
   card: {
     flexDirection: 'row',
     height: 87,
-    backgroundColor: COLORS.card,
+    backgroundColor: BelloraColors.white,
     borderWidth: 1,
-    borderColor: COLORS.border,
+    borderColor: BelloraColors.softBorder,
     borderRadius: 14,
     overflow: 'hidden',
   },
@@ -56,13 +48,13 @@ export const styles = StyleSheet.create({
   cardTitle: {
     fontFamily: FONTS.semiBold,
     fontSize: 15,
-    color: COLORS.title,
+    color: BelloraColors.titleBrown,
     marginBottom: 4,
   },
   cardSubtitle: {
     fontFamily: FONTS.regular,
     fontSize: 12.5,
-    color: COLORS.subtitle,
+    color: BelloraColors.textSubtle,
   },
   cardImage: {
     width: 102,

@@ -60,7 +60,7 @@ const EditProfileScreen = () => {
                         accessibilityRole="button"
                         accessibilityLabel="Go back"
                     >
-                        {/* <Icon name="arrow-left" size={22} color="#3B2314" /> */}
+                        {/* <Icon name="arrow-left" size={22} color={BelloraColors.textDark} /> */}
                     </TouchableOpacity>
                     <Text style={styles.headerTitle}>Edit Profile</Text>
                 </View>

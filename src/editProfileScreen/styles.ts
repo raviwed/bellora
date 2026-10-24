@@ -1,9 +1,5 @@
 import { StyleSheet } from "react-native";
-
-const TEXT_DARK = "#3B2314";
-const BORDER = "#E8D5C0";
-const AVATAR_BG = "#EBD9C2";
-const ACCENT = "#D9822B";
+import { BelloraColors } from "../../assets/constants/enums";
 
 export const styles = StyleSheet.create({
     flex: {
@@ -24,7 +20,7 @@ export const styles = StyleSheet.create({
     },
     headerTitle: {
         fontSize: 18,
-        color: TEXT_DARK,
+        color: BelloraColors.textDark,
         fontFamily: "BelloraHeading-Bold",
     },
 
@@ -44,19 +40,19 @@ export const styles = StyleSheet.create({
         width: 80,
         height: 80,
         borderRadius: 40,
-        backgroundColor: AVATAR_BG,
+        backgroundColor: BelloraColors.avatarBackground,
         alignItems: "center",
         justifyContent: "center",
     },
     avatarTxt: {
         fontSize: 26,
-        color: TEXT_DARK,
+        color: BelloraColors.textDark,
         fontFamily: "BelloraHeading-Bold",
     },
     changePhotoTxt: {
         marginTop: 10,
         fontSize: 13,
-        color: ACCENT,
+        color: BelloraColors.accent,
         fontFamily: "BelloraDescription-Regular",
     },
 
@@ -67,7 +63,7 @@ export const styles = StyleSheet.create({
     label: {
         marginBottom: 6,
         fontSize: 12,
-        color: TEXT_DARK,
+        color: BelloraColors.textDark,
         fontFamily: "BelloraDescription-Regular",
     },
     input: {
@@ -75,10 +71,10 @@ export const styles = StyleSheet.create({
         paddingHorizontal: 14,
         borderRadius: 14,
         borderWidth: 1,
-        borderColor: BORDER,
-        backgroundColor: "#FFFFFF",
+        borderColor: BelloraColors.cardBorder,
+        backgroundColor: BelloraColors.white,
         fontSize: 14,
-        color: TEXT_DARK,
+        color: BelloraColors.textDark,
         fontFamily: "BelloraDescription-Regular",
     },
 

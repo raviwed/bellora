@@ -1,8 +1,5 @@
 import { StyleSheet } from "react-native";
-
-const BROWN = "#6B3A1E";
-const TEXT_DARK = "#3B2314";
-const BORDER = "#E8D5C0";
+import { BelloraColors } from "../../assets/constants/enums";
 
 export const styles = StyleSheet.create({
     container: {
@@ -13,7 +10,7 @@ export const styles = StyleSheet.create({
 
     title: {
         fontSize: 22,
-        color: TEXT_DARK,
+        color: BelloraColors.textDark,
         fontFamily: "BelloraHeading-Bold",
     },
 
@@ -30,20 +27,20 @@ export const styles = StyleSheet.create({
         paddingVertical: 8,
         borderRadius: 20,
         borderWidth: 1,
-        borderColor: BORDER,
-        backgroundColor: "#FFFFFF",
+        borderColor: BelloraColors.cardBorder,
+        backgroundColor: BelloraColors.white,
     },
     chipActive: {
-        backgroundColor: BROWN,
-        borderColor: BROWN,
+        backgroundColor: BelloraColors.brown,
+        borderColor: BelloraColors.brown,
     },
     chipTxt: {
         fontSize: 14,
-        color: TEXT_DARK,
+        color: BelloraColors.textDark,
         fontFamily: "BelloraDescription-Regular",
     },
     chipTxtActive: {
-        color: "#FFFFFF",
+        color: BelloraColors.white,
     },
 
     // List
@@ -54,10 +51,10 @@ export const styles = StyleSheet.create({
 
     // Order card
     card: {
-        backgroundColor: "#FFFFFF",
+        backgroundColor: BelloraColors.white,
         borderRadius: 14,
         borderWidth: 1,
-        borderColor: BORDER,
+        borderColor: BelloraColors.cardBorder,
         paddingHorizontal: 14,
         paddingVertical: 14,
     },
@@ -69,19 +66,19 @@ export const styles = StyleSheet.create({
     orderId: {
         fontSize: 16,
         fontWeight: "600",
-        color: TEXT_DARK,
+        color: BelloraColors.textDark,
         fontFamily: "BelloraDescription-Regular",
     },
     amountTxt: {
         marginTop: 6,
         fontSize: 13,
-        color: "#6E5A4C",
+        color: BelloraColors.textSecondary,
         fontFamily: "BelloraDescription-Regular",
     },
     dateTxt: {
         marginTop: 4,
         fontSize: 12,
-        color: "#8C7A6C",
+        color: BelloraColors.textMuted,
         fontFamily: "BelloraDescription-Regular",
     },
 
@@ -92,27 +89,27 @@ export const styles = StyleSheet.create({
         borderRadius: 12,
     },
     badgeDelivered: {
-        backgroundColor: "#DDEBD3",
+        backgroundColor: BelloraColors.deliveredBackground,
     },
     badgeProcessing: {
-        backgroundColor: "#FBEBCF",
+        backgroundColor: BelloraColors.processingBackground,
     },
     badgeTxt: {
         fontSize: 11,
         fontFamily: "BelloraDescription-Regular",
     },
     badgeTxtDelivered: {
-        color: "#4F7A3A",
+        color: BelloraColors.deliveredText,
     },
     badgeTxtProcessing: {
-        color: "#A8701A",
+        color: BelloraColors.processingText,
     },
 
     emptyTxt: {
         textAlign: "center",
         marginTop: 40,
         fontSize: 14,
-        color: "#8C7A6C",
+        color: BelloraColors.textMuted,
         fontFamily: "BelloraDescription-Regular",
     },
 });

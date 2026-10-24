@@ -12,6 +12,7 @@ import {
   ImageStyle,
   StyleProp,
 } from 'react-native';
+import { BelloraColors } from '../assets/constants/enums';
 
 const SCREEN_WIDTH = Dimensions.get('window').width * 0.9;
 
@@ -175,11 +176,11 @@ const styles = StyleSheet.create({
     width: 7,
     height: 7,
     borderRadius: 4,
-    backgroundColor: '#D6D6D6',
+    backgroundColor: BelloraColors.dotInactive,
   },
   activeDot: {
     width: 18,
-    backgroundColor: '#6B3F24',
+    backgroundColor: BelloraColors.primary,
   },
 });
 

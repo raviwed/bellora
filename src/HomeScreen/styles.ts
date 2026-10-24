@@ -1,7 +1,5 @@
 import { StyleSheet } from "react-native";
 import { BelloraColors } from "../../assets/constants/enums";
-const BROWN = "#6B3A1E";
-const TEXT_DARK = "#3B2314";
 
 export const styles = StyleSheet.create({
     screen: {
@@ -22,26 +20,26 @@ export const styles = StyleSheet.create({
         top: -3,
         width: 15,
         height: 15,
-        backgroundColor: "red",
+        backgroundColor: BelloraColors.notificationBadge,
         borderRadius: 10,
         justifyContent: "center",
         alignItems: "center",
     },
     notifyTxt: {
         fontSize: 10,
-        color: "#fff",
+        color: BelloraColors.white,
     },
     searchbox: {
         flexDirection: "row",
         alignItems: "center",
         marginTop: 15,
         justifyContent: "center",
-        backgroundColor: "#fff",
+        backgroundColor: BelloraColors.white,
         borderWidth: 1,
         paddingHorizontal: 10,
         paddingVertical: 5,
         alignSelf: "center",
-        borderColor: "rgb(230, 211, 188)",
+        borderColor: BelloraColors.searchBorder,
         borderRadius: 30,
     },
     containerBox: {
@@ -98,51 +96,51 @@ export const styles = StyleSheet.create({
         fontSize: 24,
         textAlign: "center",
         marginBottom: 10,
-        color: TEXT_DARK,
+        color: BelloraColors.textDark,
         fontFamily: "BelloraHeading-Bold",
     },
     btn: {
         height: 52,
         borderRadius: 14,
-        backgroundColor: BROWN,
+        backgroundColor: BelloraColors.brown,
         alignItems: "center",
         justifyContent: "center",
     },
     btnTxt: {
-        color: "#FFFFFF",
+        color: BelloraColors.white,
         fontSize: 15,
         fontFamily: "BelloraDescription-Regular",
     },
     row: {
         paddingVertical: 16,
         borderBottomWidth: 1,
-        borderBottomColor: "#EADBCB",
+        borderBottomColor: BelloraColors.divider,
     },
     rowTxt: {
         fontSize: 15,
-        color: TEXT_DARK,
+        color: BelloraColors.textDark,
         fontFamily: "BelloraDescription-Regular",
     },
     input: {
         height: 48,
         borderRadius: 14,
         borderWidth: 1,
-        borderColor: "#E8D5C0",
-        backgroundColor: "#FFFFFF",
+        borderColor: BelloraColors.cardBorder,
+        backgroundColor: BelloraColors.white,
         paddingHorizontal: 14,
         fontSize: 14,
-        color: TEXT_DARK,
+        color: BelloraColors.textDark,
     },
     applyBtn: {
         marginTop: 14,
         height: 52,
         borderRadius: 14,
-        backgroundColor: BROWN,
+        backgroundColor: BelloraColors.brown,
         alignItems: "center",
         justifyContent: "center",
     },
     applyTxt: {
-        color: "#FFFFFF",
+        color: BelloraColors.white,
         fontSize: 15,
         fontFamily: "BelloraDescription-Regular",
     },
@@ -161,10 +159,10 @@ export const cardStyles = StyleSheet.create({
     },
     card: {
         width: "48%",
-        backgroundColor: "#FFFFFF",
+        backgroundColor: BelloraColors.white,
         borderRadius: 16,
         borderWidth: 1,
-        borderColor: "#E8D5C0",
+        borderColor: BelloraColors.cardBorder,
         overflow: "hidden",
     },
     cardImage: {
@@ -177,7 +175,7 @@ export const cardStyles = StyleSheet.create({
     cardName: {
         fontSize: 16,
         fontWeight: "600",
-        color: "#3B2314",
+        color: BelloraColors.textDark,
     },
     priceRow: {
         flexDirection: "row",
@@ -188,18 +186,18 @@ export const cardStyles = StyleSheet.create({
     price: {
         fontSize: 18,
         fontWeight: "700",
-        color: "#3B2314",
+        color: BelloraColors.textDark,
     },
     addBtn: {
         width: 40,
         height: 40,
         borderRadius: 20,
-        backgroundColor: "#6B3A1E",
+        backgroundColor: BelloraColors.brown,
         alignItems: "center",
         justifyContent: "center",
     },
     addTxt: {
-        color: "#FFFFFF",
+        color: BelloraColors.white,
         fontSize: 24,
         lineHeight: 26,
         fontWeight: "400",
@@ -224,14 +222,14 @@ export const sheetStyles = StyleSheet.create({
     },
     productName: {
         fontSize: 17,
-        color: "#3B2314",
+        color: BelloraColors.textDark,
         fontFamily: "BelloraHeading-Bold",
     },
     productPrice: {
         marginTop: 4,
         fontSize: 16,
         fontWeight: "700",
-        color: "#6B3A1E",
+        color: BelloraColors.brown,
     },
     qtyRow: {
         flexDirection: "row",
@@ -242,16 +240,16 @@ export const sheetStyles = StyleSheet.create({
     },
     qtyLabel: {
         fontSize: 14,
-        color: "#3B2314",
+        color: BelloraColors.textDark,
         fontFamily: "BelloraDescription-Regular",
     },
     qtyBox: {
         flexDirection: "row",
         alignItems: "center",
         borderWidth: 1,
-        borderColor: "#E8D5C0",
+        borderColor: BelloraColors.cardBorder,
         borderRadius: 20,
-        backgroundColor: "#FFFFFF",
+        backgroundColor: BelloraColors.white,
     },
     qtyBtn: {
         width: 40,
@@ -261,7 +259,7 @@ export const sheetStyles = StyleSheet.create({
     },
     qtyBtnTxt: {
         fontSize: 20,
-        color: "#3B2314",
+        color: BelloraColors.textDark,
     },
     qtyDisabled: {
         opacity: 0.3,
@@ -271,6 +269,6 @@ export const sheetStyles = StyleSheet.create({
         textAlign: "center",
         fontSize: 15,
         fontWeight: "600",
-        color: "#3B2314",
+        color: BelloraColors.textDark,
     },
 });

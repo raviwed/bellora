@@ -6,6 +6,7 @@ import {
     BottomSheetModal,
     BottomSheetView,
 } from "@gorhom/bottom-sheet";
+import { BelloraColors } from "../assets/constants/enums";
 
 type Props = {
     title?: string;
@@ -57,14 +58,14 @@ const BottomSheetComponent = forwardRef<BottomSheetModal, Props>(
 
 export const styles = StyleSheet.create({
     background: {
-        backgroundColor: "#FDF5EC",
+        backgroundColor: BelloraColors.sheetBackground,
         borderTopLeftRadius: 24,
         borderTopRightRadius: 24,
     },
     handle: {
         width: 44,
         height: 5,
-        backgroundColor: "#E0CDB8",
+        backgroundColor: BelloraColors.sheetHandle,
     },
     content: {
         paddingHorizontal: 16,
@@ -74,7 +75,7 @@ export const styles = StyleSheet.create({
     title: {
         fontSize: 18,
         marginBottom: 12,
-        color: "#3B2314",
+        color: BelloraColors.textDark,
         fontFamily: "BelloraHeading-Bold",
     },
 });

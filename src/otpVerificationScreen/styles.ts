@@ -1,15 +1,5 @@
 import { StyleSheet } from "react-native"
-
-export const COLORS = {
-    background: "#FFF6F0",
-    title: "#4A2C1A",
-    muted: "#8C7568",
-    border: "#EBD3BF",
-    borderFocused: "#6B3A1E",
-    button: "#6B3A1E",
-    white: "#FFFFFF",
-    leaf: "#EBCFAF",
-}
+import { BelloraColors } from "../../assets/constants/enums";
 
 // Playfair Display for the brand, heading and digits; Montserrat for the rest.
 // Link the fonts, or remove the fontFamily lines to use the system font.
@@ -24,7 +14,7 @@ const FONTS = {
 export const styles = StyleSheet.create({
     root: {
         flex: 1,
-        backgroundColor: COLORS.background,
+        backgroundColor: BelloraColors.cream,
     },
     scroll: {
         flexGrow: 1,
@@ -51,13 +41,13 @@ export const styles = StyleSheet.create({
     brand: {
         fontFamily: FONTS.serifMedium,
         fontSize: 30,
-        color: COLORS.title,
+        color: BelloraColors.titleBrown,
         marginTop: 2,
     },
     heading: {
         fontFamily: FONTS.serifBold,
         fontSize: 26,
-        color: COLORS.title,
+        color: BelloraColors.titleBrown,
         marginTop: 28,
         marginBottom: 8,
     },
@@ -65,7 +55,7 @@ export const styles = StyleSheet.create({
         fontFamily: FONTS.regular,
         fontSize: 13,
         lineHeight: 19,
-        color: COLORS.muted,
+        color: BelloraColors.textSubtle,
         textAlign: "center",
     },
 
@@ -80,19 +70,19 @@ export const styles = StyleSheet.create({
         height: 52,
         borderRadius: 12,
         borderWidth: 1,
-        borderColor: COLORS.border,
-        backgroundColor: COLORS.background,
+        borderColor: BelloraColors.softBorder,
+        backgroundColor: BelloraColors.cream,
         textAlign: "center",
         fontFamily: FONTS.serifMedium,
         fontSize: 22,
-        color: COLORS.title,
+        color: BelloraColors.titleBrown,
         padding: 0,
     },
     otpBoxFilled: {
-        backgroundColor: COLORS.white,
+        backgroundColor: BelloraColors.white,
     },
     otpBoxFocused: {
-        borderColor: COLORS.borderFocused,
+        borderColor: BelloraColors.brown,
         borderWidth: 1.5,
     },
 
@@ -104,15 +94,15 @@ export const styles = StyleSheet.create({
     resendTxt: {
         fontFamily: FONTS.regular,
         fontSize: 12.5,
-        color: COLORS.muted,
+        color: BelloraColors.textSubtle,
     },
     timer: {
         fontFamily: FONTS.semiBold,
-        color: COLORS.title,
+        color: BelloraColors.titleBrown,
     },
     resendActive: {
         fontFamily: FONTS.semiBold,
-        color: COLORS.button,
+        color: BelloraColors.brown,
     },
 
     /* Verify */
@@ -120,7 +110,7 @@ export const styles = StyleSheet.create({
         height: 50,
         marginTop: 20,
         borderRadius: 14,
-        backgroundColor: COLORS.button,
+        backgroundColor: BelloraColors.brown,
         alignItems: "center",
         justifyContent: "center",
     },
@@ -130,6 +120,6 @@ export const styles = StyleSheet.create({
     verifyTxt: {
         fontFamily: FONTS.semiBold,
         fontSize: 15,
-        color: COLORS.white,
+        color: BelloraColors.white,
     },
 })

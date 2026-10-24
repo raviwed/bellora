@@ -77,7 +77,7 @@ const ProfileScreen = () => {
                         accessibilityRole="button"
                         accessibilityLabel="Edit profile"
                     >
-                        {/* <Icon name="edit-2" size={18} color="#3B2314" /> */}
+                        {/* <Icon name="edit-2" size={18} color={BelloraColors.textDark} /> */}
                     </TouchableOpacity>
                 </View>
 
@@ -95,10 +95,10 @@ const ProfileScreen = () => {
                             accessibilityRole="button"
                         >
                             <View style={styles.menuLeft}>
-                                {/* <Icon name={item.icon} size={18} color="#3B2314" /> */}
+                                {/* <Icon name={item.icon} size={18} color={BelloraColors.textDark} /> */}
                                 <Text style={styles.menuTxt}>{item.label}</Text>
                             </View>
-                            {/* <Icon name="chevron-right" size={20} color="#A89484" /> */}
+                            {/* <Icon name="chevron-right" size={20} color={BelloraColors.chevron} /> */}
                         </TouchableOpacity>
                     ))}
                 </View>
