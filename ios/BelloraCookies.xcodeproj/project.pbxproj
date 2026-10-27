@@ -11,9 +11,12 @@
 		13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB51A68108700A75B9A /* Images.xcassets */; };
 		761780ED2CA45674006654EE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 761780EC2CA45674006654EE /* AppDelegate.swift */; };
 		81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */; };
-		F92FA04896E34BC197650A2A /* BelloraDescription-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 715BAF45386844B8AAEE0C21 /* BelloraDescription-Regular.ttf */; };
-		996A27FE193C4B2D8BD95D76 /* BelloraHeading-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 7E377DA691B740F989E01625 /* BelloraHeading-Bold.ttf */; };
-		F3CDC6039A584D1DB35B6795 /* BelloraLogo-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = AADD699A236F420DA584BD5F /* BelloraLogo-Regular.ttf */; };
+		4EA48F04BCAD40B79F52AD35 /* BelloraDescription-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 6050990B62D64250BCF9004B /* BelloraDescription-Regular.ttf */; };
+		CCD0D85FE2064B91BCDEBD50 /* BelloraHeading-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C377F5DE397B49D8B72B69B9 /* BelloraHeading-Bold.ttf */; };
+		752EA2FA618F42C49C34F945 /* BelloraLogo-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = D506FF9A1A49471CAABC719D /* BelloraLogo-Regular.ttf */; };
+		85C8A74C8296480ABCFEF995 /* Montserrat-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 4B58E4D241914650A984C6E8 /* Montserrat-Medium.ttf */; };
+		A432D666D36C45928226DF29 /* Montserrat-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9D9ADBC708D84E939009BFEE /* Montserrat-Regular.ttf */; };
+		107E938A5DB049BA96F8534D /* Montserrat-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A9FEEC32F0F144C08A8284A5 /* Montserrat-SemiBold.ttf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -27,9 +30,12 @@
 		761780EC2CA45674006654EE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AppDelegate.swift; path = BelloraCookies/AppDelegate.swift; sourceTree = "<group>"; };
 		81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = LaunchScreen.storyboard; path = BelloraCookies/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		ED297162215061F000B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
-		715BAF45386844B8AAEE0C21 /* BelloraDescription-Regular.ttf */ = {isa = PBXFileReference; name = "BelloraDescription-Regular.ttf"; path = "../assets/fonts/BelloraDescription-Regular.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
-		7E377DA691B740F989E01625 /* BelloraHeading-Bold.ttf */ = {isa = PBXFileReference; name = "BelloraHeading-Bold.ttf"; path = "../assets/fonts/BelloraHeading-Bold.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
-		AADD699A236F420DA584BD5F /* BelloraLogo-Regular.ttf */ = {isa = PBXFileReference; name = "BelloraLogo-Regular.ttf"; path = "../assets/fonts/BelloraLogo-Regular.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		6050990B62D64250BCF9004B /* BelloraDescription-Regular.ttf */ = {isa = PBXFileReference; name = "BelloraDescription-Regular.ttf"; path = "../assets/fonts/BelloraDescription-Regular.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		C377F5DE397B49D8B72B69B9 /* BelloraHeading-Bold.ttf */ = {isa = PBXFileReference; name = "BelloraHeading-Bold.ttf"; path = "../assets/fonts/BelloraHeading-Bold.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		D506FF9A1A49471CAABC719D /* BelloraLogo-Regular.ttf */ = {isa = PBXFileReference; name = "BelloraLogo-Regular.ttf"; path = "../assets/fonts/BelloraLogo-Regular.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		4B58E4D241914650A984C6E8 /* Montserrat-Medium.ttf */ = {isa = PBXFileReference; name = "Montserrat-Medium.ttf"; path = "../assets/fonts/Montserrat-Medium.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		9D9ADBC708D84E939009BFEE /* Montserrat-Regular.ttf */ = {isa = PBXFileReference; name = "Montserrat-Regular.ttf"; path = "../assets/fonts/Montserrat-Regular.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		A9FEEC32F0F144C08A8284A5 /* Montserrat-SemiBold.ttf */ = {isa = PBXFileReference; name = "Montserrat-SemiBold.ttf"; path = "../assets/fonts/Montserrat-SemiBold.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -107,9 +113,12 @@
 		847CEB2111CA4CC693A1A463 /* Resources */ = {
 			isa = "PBXGroup";
 			children = (
-				715BAF45386844B8AAEE0C21 /* BelloraDescription-Regular.ttf */,
-				7E377DA691B740F989E01625 /* BelloraHeading-Bold.ttf */,
-				AADD699A236F420DA584BD5F /* BelloraLogo-Regular.ttf */,
+				6050990B62D64250BCF9004B /* BelloraDescription-Regular.ttf */,
+				C377F5DE397B49D8B72B69B9 /* BelloraHeading-Bold.ttf */,
+				D506FF9A1A49471CAABC719D /* BelloraLogo-Regular.ttf */,
+				4B58E4D241914650A984C6E8 /* Montserrat-Medium.ttf */,
+				9D9ADBC708D84E939009BFEE /* Montserrat-Regular.ttf */,
+				A9FEEC32F0F144C08A8284A5 /* Montserrat-SemiBold.ttf */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -177,9 +186,12 @@
 			files = (
 				81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */,
 				13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */,
-				F92FA04896E34BC197650A2A /* BelloraDescription-Regular.ttf in Resources */,
-				996A27FE193C4B2D8BD95D76 /* BelloraHeading-Bold.ttf in Resources */,
-				F3CDC6039A584D1DB35B6795 /* BelloraLogo-Regular.ttf in Resources */,
+				4EA48F04BCAD40B79F52AD35 /* BelloraDescription-Regular.ttf in Resources */,
+				CCD0D85FE2064B91BCDEBD50 /* BelloraHeading-Bold.ttf in Resources */,
+				752EA2FA618F42C49C34F945 /* BelloraLogo-Regular.ttf in Resources */,
+				85C8A74C8296480ABCFEF995 /* Montserrat-Medium.ttf in Resources */,
+				A432D666D36C45928226DF29 /* Montserrat-Regular.ttf in Resources */,
+				107E938A5DB049BA96F8534D /* Montserrat-SemiBold.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

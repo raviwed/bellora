@@ -1,6 +1,12 @@
 import { StyleSheet } from "react-native";
 import { BelloraColors } from "../../assets/constants/enums";
 
+const FONTS = {
+    regular: "Montserrat-Regular",
+    medium: "Montserrat-Medium",
+    semiBold: "Montserrat-SemiBold",
+};
+
 export const styles = StyleSheet.create({
     flex: {
         flex: 1,
@@ -18,9 +24,9 @@ export const styles = StyleSheet.create({
         padding: 4,
     },
     headerTitle: {
-        fontSize: 18,
+        fontSize: 17,
         color: BelloraColors.textDark,
-        fontFamily: "BelloraHeading-Bold",
+        fontFamily: FONTS.semiBold,
     },
 
     // Content
@@ -32,7 +38,7 @@ export const styles = StyleSheet.create({
 
     // Help options list
     menuList: {
-        marginBottom: 20,
+        marginBottom: 12,
     },
     menuRow: {
         flexDirection: "row",
@@ -47,10 +53,16 @@ export const styles = StyleSheet.create({
         alignItems: "center",
         gap: 14,
     },
+    menuIcon: {
+        width: 20,
+        height: 20,
+        alignItems: "center",
+        justifyContent: "center",
+    },
     menuTxt: {
-        fontSize: 15,
+        fontSize: 14,
         color: BelloraColors.textDark,
-        fontFamily: "BelloraDescription-Regular",
+        fontFamily: FONTS.regular,
     },
 
     // Need more help card
@@ -59,18 +71,28 @@ export const styles = StyleSheet.create({
         borderRadius: 14,
         borderWidth: 1,
         borderColor: BelloraColors.avatarBackground,
-        padding: 16,
+        padding: 12,
     },
     helpCardTitle: {
-        fontSize: 15,
+        fontSize: 14,
         color: BelloraColors.textDark,
-        fontFamily: "BelloraHeading-Bold",
+        fontFamily: FONTS.semiBold,
     },
     helpCardSubtitle: {
-        marginTop: 2,
+        marginTop: 4,
         marginBottom: 14,
-        fontSize: 12,
+        fontSize: 11,
         color: BelloraColors.textMuted,
-        fontFamily: "BelloraDescription-Regular",
+        fontFamily: FONTS.regular,
+    },
+    contactBtn: {
+        height: 46,
+        borderRadius: 10,
+        backgroundColor: BelloraColors.chocolate,
+    },
+    contactBtnTxt: {
+        fontSize: 15,
+        fontWeight: "normal",
+        fontFamily: FONTS.medium,
     },
 });

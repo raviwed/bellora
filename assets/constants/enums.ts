@@ -64,4 +64,5 @@ export const BelloraScreens={
   singleProductPage:"singleProductPage",
   otpScreenPage:"otpScreenPage",
   orderTracking:"orderTracking",
+  aboutBellora:"aboutBellora",
 } as const

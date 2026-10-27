@@ -35,7 +35,7 @@ const menuItems: MenuItem[] = [
     { id: "wishlist", label: "Wishlist", Icon: HeartOutlineIcon },
     { id: "notifications", label: "Notifications", Icon: NotificationIcon },
     { id: "help", label: "Help & Support", Icon: HelpCircleIcon, nav: BelloraScreens.helpsupport },
-    { id: "about", label: "About Bellora", Icon: ReadIcon },
+    { id: "about", label: "About Bellora", Icon: ReadIcon, nav: BelloraScreens.aboutBellora },
     { id: "settings", label: "Settings", Icon: RegulaizerIcon },
 ];
 

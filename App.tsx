@@ -19,6 +19,7 @@ import { BottomSheetModalProvider } from "@gorhom/bottom-sheet";
 import SingleProductPage from "./src/singleProductPage/SingleProductPage";
 import OtpVerificationScreen from "./src/otpVerificationScreen/OtpVerificationScreen";
 import OrderTrackingScreen from "./src/orderTracking/OrderTracking";
+import AboutBelloraScreen from "./src/aboutBellora/AboutBellora";
 
 const Stack = createNativeStackNavigator<RootStackParamList>();
 
@@ -63,6 +64,10 @@ const appScreens: AppScreen[] = [
   {
     name:BelloraScreens.orderTracking,
     component:OrderTrackingScreen,
+  },
+  {
+    name:BelloraScreens.aboutBellora,
+    component:AboutBelloraScreen,
   }
 ];
 
