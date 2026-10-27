@@ -18,6 +18,7 @@ import { GestureHandlerRootView } from "react-native-gesture-handler";
 import { BottomSheetModalProvider } from "@gorhom/bottom-sheet";
 import SingleProductPage from "./src/singleProductPage/SingleProductPage";
 import OtpVerificationScreen from "./src/otpVerificationScreen/OtpVerificationScreen";
+import OrderTrackingScreen from "./src/orderTracking/OrderTracking";
 
 const Stack = createNativeStackNavigator<RootStackParamList>();
 
@@ -58,6 +59,10 @@ const appScreens: AppScreen[] = [
   {
     name:BelloraScreens.otpScreenPage,
     component:OtpVerificationScreen,
+  },
+  {
+    name:BelloraScreens.orderTracking,
+    component:OrderTrackingScreen,
   }
 ];
 

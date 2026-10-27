@@ -76,6 +76,12 @@ export const styles = StyleSheet.create({
         alignItems: "center",
         gap: 14,
     },
+    menuIcon: {
+        width: 20,
+        height: 20,
+        alignItems: "center",
+        justifyContent: "center",
+    },
     menuTxt: {
         fontSize: 15,
         color: BelloraColors.textDark,

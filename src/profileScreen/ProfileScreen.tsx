@@ -2,7 +2,16 @@ import React from "react";
 import { ScrollView, Text, TouchableOpacity, View } from "react-native";
 
 import SafeAreaComponent from "../../Components/SafeAreaComponent";
-
+import type { SvgProps } from "react-native-svg";
+import EditIcon from "../../assets/svg/EditIcon.svg";
+import NotePadIcon from "../../assets/svg/NotePadIcon.svg";
+import LocationShareIcon from "../../assets/svg/LocationShareIcon.svg";
+import HeartOutlineIcon from "../../assets/svg/HeartOutlineIcon.svg";
+import NotificationIcon from "../../assets/svg/Notification.svg";
+import HelpCircleIcon from "../../assets/svg/HelpCircleIcon.svg";
+import ReadIcon from "../../assets/svg/ReadIcon.svg";
+import RegulaizerIcon from "../../assets/svg/RegulaizerIcon.svg";
+import ChevronRightIcon from "../../assets/svg/ChevronRightIcon.svg";
 import { BelloraScreens } from "../../assets/constants/enums";
 import { NavigationProp, useNavigation } from "@react-navigation/native";
 import { styles } from "./styles";
@@ -11,7 +20,7 @@ import { RootStackParamList } from "../navigation/types";
 type MenuItem = {
     id: string;
     label: string;
-    icon: string;
+    Icon: React.FC<SvgProps>;
     nav?: keyof RootStackParamList; // optional: only items with a screen navigate
 };
 
@@ -21,13 +30,13 @@ const user = {
 };
 
 const menuItems: MenuItem[] = [
-    { id: "orders", label: "My Orders", icon: "file-text" },
-    { id: "addresses", label: "Addresses", icon: "map-pin" },
-    { id: "wishlist", label: "Wishlist", icon: "heart" },
-    { id: "notifications", label: "Notifications", icon: "bell" },
-    { id: "help", label: "Help & Support", icon: "help-circle", nav: BelloraScreens.helpsupport },
-    { id: "about", label: "About Bellora", icon: "info" },
-    { id: "settings", label: "Settings", icon: "sliders" },
+    { id: "orders", label: "My Orders", Icon: NotePadIcon },
+    { id: "addresses", label: "Addresses", Icon: LocationShareIcon },
+    { id: "wishlist", label: "Wishlist", Icon: HeartOutlineIcon },
+    { id: "notifications", label: "Notifications", Icon: NotificationIcon },
+    { id: "help", label: "Help & Support", Icon: HelpCircleIcon, nav: BelloraScreens.helpsupport },
+    { id: "about", label: "About Bellora", Icon: ReadIcon },
+    { id: "settings", label: "Settings", Icon: RegulaizerIcon },
 ];
 
 const getInitials = (name: string) =>
@@ -77,7 +86,7 @@ const ProfileScreen = () => {
                         accessibilityRole="button"
                         accessibilityLabel="Edit profile"
                     >
-                        {/* <Icon name="edit-2" size={18} color={BelloraColors.textDark} /> */}
+                        <EditIcon width={20} height={20} />
                     </TouchableOpacity>
                 </View>
 
@@ -95,10 +104,12 @@ const ProfileScreen = () => {
                             accessibilityRole="button"
                         >
                             <View style={styles.menuLeft}>
-                                {/* <Icon name={item.icon} size={18} color={BelloraColors.textDark} /> */}
+                                <View style={styles.menuIcon}>
+                                    <item.Icon width={20} height={20} />
+                                </View>
                                 <Text style={styles.menuTxt}>{item.label}</Text>
                             </View>
-                            {/* <Icon name="chevron-right" size={20} color={BelloraColors.chevron} /> */}
+                            <ChevronRightIcon width={18} height={18} />
                         </TouchableOpacity>
                     ))}
                 </View>

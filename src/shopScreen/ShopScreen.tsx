@@ -8,9 +8,11 @@ import {
   StyleSheet,
   ImageSourcePropType,
 } from 'react-native';
+import { useNavigation } from '@react-navigation/native';
 import SafeAreaComponent from '../../Components/SafeAreaComponent';
 import {  styles } from './styles';
 import Search from "../../assets/svg/Search.svg"
+import { BelloraScreens } from '../../assets/constants/enums';
 /* ---------- Types & data ---------- */
 type Category = {
   id: string;
@@ -73,8 +75,11 @@ const CategoryCard = ({ item, onPress }: CategoryCardProps) => (
 );
 
 const ShopScreen = () => {
-  const handleCategoryPress = (item: Category) => {
-    console.log('Selected category:', item.id);
+  const navigation = useNavigation<any>();
+
+  // Temporary: every product opens order tracking until the real flow is decided
+  const handleCategoryPress = (_item: Category) => {
+    navigation.navigate(BelloraScreens.orderTracking);
   };
 
   const handleSearchPress = () => {
